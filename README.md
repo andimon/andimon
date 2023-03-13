@@ -5,7 +5,7 @@
 <!-- Markdown -->
 ![Jokes Card](https://readme-jokes.vercel.app/api)
 
-### Vistors
+### Profile Vistors
 
 ![Visitor Count](https://profile-counter.glitch.me/andimon/count.svg)
 
