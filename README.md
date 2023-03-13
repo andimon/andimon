@@ -10,6 +10,8 @@
 
 ![Visitor Count](https://profile-counter.glitch.me/andimon/count.svg)
 
+![Current UTC time](https://jojoee.jojoee.com/api/utcnowgif?utcnow)
+
 
 
 
