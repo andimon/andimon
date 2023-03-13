@@ -1,4 +1,16 @@
-### Hi there 👋
+# Hello, World! 👋
+
+
+### Random Joke
+<!-- Markdown -->
+![Jokes Card](https://readme-jokes.vercel.app/api)
+
+### Vistors
+
+![Visitor Count](https://profile-counter.glitch.me/andimon/count.svg)
+
+
+
 
 <!--
 **andimon/andimon** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
