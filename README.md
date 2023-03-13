@@ -17,7 +17,6 @@
 <img src="https://cdn-icons-png.flaticon.com/512/25/25231.png" width="25px" title="github">  
 <img src="https://pop.system76.com/icon-512.png" width="25px" title="pop os">  
 <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a5/Archlinux-icon-crystal-64.svg/1200px-Archlinux-icon-crystal-64.svg.png" width="25px" title="arch linux">  
-
 </p>
 
 ### Random Joke
