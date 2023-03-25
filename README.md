@@ -23,6 +23,15 @@
 <!-- Markdown -->
 ![Jokes Card](https://readme-jokes.vercel.app/api)
 
+# Conventions
+```jason
+{
+  trivial_variables: "i,n,c",
+  local_variables: "camelCase",
+  global_variables: "g_camelCase",
+}
+```
+
 ###  # of profile visits
 
 ![Visitor Count](https://profile-counter.glitch.me/andimon/count.svg)
