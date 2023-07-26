@@ -12,8 +12,8 @@
       8  8888oooooooooooooooooooooocgmm8888    8       d8888888
       8 .od88888888888888888888888888888888    8      d88888888
       8888888888888888888888888888888888888    8     d888888888
-                                               8    d8888888888    I like to build (Program),
-         ooooooooooooooooooooooooooooooo       8   d88888888888              and wonder (Computer Science and Mathematics)......   
+                                               8    d8888888888    I like to do stuff.
+         ooooooooooooooooooooooooooooooo       8   d88888888888        
         d                       ...oood8b      8  d888888888888             
        d              ...oood888888888888b     8 d8888888888888
       d     ...oood88888888888888888888888b    8d88888888888888
