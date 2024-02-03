@@ -1,5 +1,9 @@
 # Hey there 👋
 
+## Tech Stack
+
+I do not really have a preferable tech stack. But if I had to consider a programming paradigm, I would go with functional.
+
 ## My Personal Computer
       ooooooooooooooooooooooooooooooooooooo
       8                                .d88                
