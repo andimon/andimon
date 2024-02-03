@@ -1,5 +1,6 @@
 # Hey there 👋
-## The computer that I use to bring my ideas to the digital world. 
+
+## My Personal Computer
       ooooooooooooooooooooooooooooooooooooo
       8                                .d88                
       8  oooooooooooooooooooooooooooood8888
