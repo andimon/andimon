@@ -5,4 +5,5 @@ Experience:
     - Relevant public projects:
       1. https://github.com/andimon/web-test-automation-and-model-based-testing
       2. https://github.com/andimon/weather-wear
+- **Functional Programming**: Elixir     
 
