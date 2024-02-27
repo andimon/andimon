@@ -7,3 +7,6 @@ Experience:
       2. https://github.com/andimon/weather-wear
 - **Functional Programming**: Elixir     
 
+
+GitHub Conventions:
+- Project names: kebab-case
