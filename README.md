@@ -2,7 +2,7 @@
 
 Experience:
 - **Software Testing**: Unit testing + Behaviour Driven Development + Cucumber + Selenium + Model Based Testing
-    - Relevant projects:
+    - Relevant public projects:
       1. https://github.com/andimon/web-test-automation-and-model-based-testing
       2. https://github.com/andimon/weather-wear
 
