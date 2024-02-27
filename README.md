@@ -9,4 +9,5 @@ Experience:
 
 
 GitHub Conventions:
-- Project names: kebab-case
+- Project names are written in kebab-case
+- All projects should contain a report or documentation
