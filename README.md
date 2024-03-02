@@ -6,8 +6,3 @@ Experience:
       1. https://github.com/andimon/web-test-automation-and-model-based-testing
       2. https://github.com/andimon/weather-wear
 - **Functional Programming**: Elixir     
-
-
-GitHub Conventions:
-- Project names are written in kebab-case
-- All projects should contain a report or documentation
