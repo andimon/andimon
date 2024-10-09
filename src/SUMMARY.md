@@ -2,4 +2,4 @@
 
 [Home Page](../README.md)
 
-- [Chapter 1](./chapter_1.md)
+- [Elixir](./elixir/elixir_getting_started.md)
