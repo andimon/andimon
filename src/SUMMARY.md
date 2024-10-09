@@ -1,5 +1,5 @@
 # Summary
 
-[Home Page](home_page.md)
+[Home Page](../README.md)
 
 - [Chapter 1](./chapter_1.md)
