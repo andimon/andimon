@@ -1,3 +1,4 @@
 # Hi. I am Andre Vella 👋
+🎓 [Bachelor of Science (Honours) Computing Science and Mathematics](https://www.um.edu.mt/courses/overview/ubschcgcmat-2024-5-o/)
 
-I am Junior Developer at <a href="https://www.wyzer.ai/"><img src="./resources/images/wyzer_logo.png" width="100" alt="Wyzer Logo"></a>
+💼 Junior Developer at <a href="https://www.wyzer.ai/"><img src="./resources/images/wyzer_logo.png" width="100" alt="Wyzer Logo"></a>
