@@ -1,5 +1,6 @@
 [book]
-authors = []
+authors = ["andimon"]
 language = "en"
 multilingual = false
 src = "src"
+title = "andimon"
