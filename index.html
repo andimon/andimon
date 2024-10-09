@@ -174,8 +174,50 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="hi-i-am-andre-vella-"><a class="header" href="#hi-i-am-andre-vella-">Hi. I am Andre Vella 👋</a></h1>
+<style>
+    .button {
+        border-radius: 4px;
+        border-style: solid;
+        border-color: black;
+        background-color: white;
+        color: black;
+        text-align: center;
+        font-size: 20px;
+        border: none;
+        padding: 2px;
+        width: 120px;
+        transition: all 0.5s;
+        cursor: pointer;
+        margin: 5px;
+    }
+
+    .button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+    }
+
+    .button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+    }
+
+    .button:hover span {
+        padding-right: 25px;
+    }
+
+    .button:hover span:after {
+        opacity: 1;
+        right: 0;
+    }
+</style>
 <p>🎓 <a href="https://www.um.edu.mt/courses/overview/ubschcgcmat-2024-5-o/">Bachelor of Science (Honours) Computing Science and Mathematics</a></p>
-<p>💼 Junior Developer at <a href="https://www.wyzer.ai/"><img src="https://github.com/andimon/andimon/blob/main/resources/images/wyzer_logo.png?raw=true" width="100" alt="Wyzer"></a></p>
+<p>💼 Junior Developer at <a href="https://www.wyzer.ai/"><button class="button"><span><img src="https://github.com/andimon/andimon/blob/main/resources/images/wyzer_logo.png?raw=true" style="width:100px; vertical-align: middle;" alt="Wyzer"> </span></button></a></p>
 
                     </main>
 
@@ -200,6 +242,22 @@
 
         </div>
 
+        <!-- Livereload script (if served using the cli tool) -->
+        <script>
+            const wsProtocol = location.protocol === 'https:' ? 'wss:' : 'ws:';
+            const wsAddress = wsProtocol + "//" + location.host + "/" + "__livereload";
+            const socket = new WebSocket(wsAddress);
+            socket.onmessage = function (event) {
+                if (event.data === "reload") {
+                    socket.close();
+                    location.reload();
+                }
+            };
+
+            window.onbeforeunload = function() {
+                socket.close();
+            }
+        </script>
 
 
 
