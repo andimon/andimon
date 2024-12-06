@@ -1,1 +1,1 @@
-# Widen my programming lanugage stack
+# Widen my programming language stack
