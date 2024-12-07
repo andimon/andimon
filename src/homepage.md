@@ -1,4 +1,3 @@
-# Andre Vella's Blog
 <div style="display: flex; align-items: center; justify-content: center;">
   <div>
     <img src="./images/me.png" alt="me" width="300" />

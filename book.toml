@@ -3,5 +3,5 @@ authors = ["andimon"]
 language = "en"
 multilingual = false
 src = "src"
-title = "andimon"
+title = "Andre' Vella's Blog"
 additional-css = ["images.css"]
