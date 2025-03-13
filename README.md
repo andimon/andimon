@@ -8,3 +8,7 @@ flowchart
     n2 --> n1
     n2 -->|Learning Hell| n2
 ````
+
+Building/Learning: Elixir, .Net, Erlang (with Phoenix & LiveView), Python, TypeScript, React, Rust and Haskell.
+Interested mainly in programming language and solving Business Driven Problems with automation and digital transformation.
+
