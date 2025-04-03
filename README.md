@@ -10,5 +10,5 @@ flowchart
 ````
 
 - Building/Learning: Elixir(with Phoenix & LiveView), .Net, Erlang, Python, TypeScript, React, Rust and Haskell.
-- Interested mainly in programming language and solving Business Driven Problems with automation and digital transformation.
+- Interested mainly in programming languages and solving Business Driven Problems with automation and digital transformation.
 
