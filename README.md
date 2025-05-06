@@ -1,14 +1,2 @@
-# Hi 👋
-## My coding life
-```mermaid
-flowchart
-	n1@{ shape: "circle", label: "Commit Code" }
-	n2@{ shape: "circle", label: "Learn" }
-    n1 --> n2
-    n2 --> n1
-    n2 -->|Learning Hell| n2
-````
-
-- Building/Learning: Elixir(with Phoenix & LiveView), .Net, Erlang, Python, TypeScript, React, Rust and Haskell.
-- Interested mainly in programming languages and solving Business Driven Problems with automation and digital transformation.
+<h1> Hi, I'm Andre' <img src="https://media1.giphy.com/media/v1.Y2lkPTc5MGI3NjExdHE3YTQ2b3MwNjh6cjJpYWhoaGZzaWtybjR4d3d3aXJ1bWVjNHJxcyZlcD12MV9pbnRlcm5hbF9naWZfYnlfaWQmY3Q9Zw/QLKSt3wQqlj7a/giphy.gif" width="200"></h1>
 
