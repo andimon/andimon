@@ -3,14 +3,5 @@
 
 - [Elixir](https://elixir-lang.org/) 
 - [.NET](https://dotnet.microsoft.com/en-us/)
-- [PostgreSQL](https://www.postgresql.org/)
-- [Docker](https://www.docker.com/)
-- [Protobuf](https://protobuf.dev/)
-- [GraphQL](https://graphql.org/)
-- [Redis](https://redis.io/)
-- [Elasticsearch](https://www.elastic.co/elasticsearch)
-- [ClickHouse](https://clickhouse.com/)
-- [Camunda](https://camunda.com/)
-- [Neo4j](https://neo4j.com/)
-
+- 
 <h2> Building with <img src="https://media.tenor.com/0-M-_QQY4eQAAAAj/pixel-heart.gif" width="40"></h2>
