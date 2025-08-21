@@ -1,7 +1,0 @@
-[book]
-authors = ["andimon"]
-language = "en"
-multilingual = false
-src = "src"
-title = "andimon"
-additional-css = ["images.css"]
