@@ -1,0 +1,12 @@
+{
+    "about": "Hello! I'm Andre' Vella, a backend-focused Software Engineer with a passion for finding the simplest solutions to complex problems. Right now I am working as a Software Engineer at <a href='https://yolo.com/' target='_blank' rel='noopener noreferrer'>Yolo Group</a> for <a href='https://hub88.io/' target='_blank' rel='noopener noreferrer'>Hub88</a>, and a part-time research support officer at the University of Malta contributing to the <a href='https://www.knowledgefabric.io/' target='_blank' rel='noopener noreferrer'>Knowledge Fabric</a> project.",
+    "technologies": [
+        "Elixir",
+        "PostgreSQL",
+        ".NET"
+    ],
+    "socials": {
+        "github": "https://github.com/andimon",
+        "linkedin": "https://linkedin.com/in/vellaandre"
+    }
+}

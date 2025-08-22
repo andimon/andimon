@@ -1,14 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Personal Page</title>
+    <title>Andre' Vella</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        .social-links a {
+            margin-right: 15px;
+            text-decoration: none;
+            color: #0366d6;
+        }
+        .social-links a:hover {
+            text-decoration: underline;
+        }
+        .technologies {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 10px 0;
+        }
+        .tech-tag {
+            background: #f1f8ff;
+            padding: 5px 10px;
+            border-radius: 3px;
+            font-size: 0.9em;
+        }
+    </style>
 </head>
-
 <body>
-    <h1>Welcome to this wonderfully empty page</h1>
-</body>
+    <header>
+        <h1>Hi, I'm Andre' Vella</h1>
+    </header>
+    
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <div id="about-content">Loading...</div>
+        </section>
 
+        <section id="technologies">
+            <h2>Technologies I am currently working with</h2>
+            <div id="technologies-list" class="technologies">Loading technologies...</div>
+        </section>
+
+        <section id="socials">
+            <h2>Connect With Me</h2>
+            <div id="social-links" class="social-links">Loading social links...</div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
 </html>
