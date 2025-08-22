@@ -1,0 +1,52 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Social Links */
+.social-links a {
+    margin-right: 15px;
+    text-decoration: none;
+    color: #0366d6;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Technologies Section */
+.technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin: 10px 0;
+}
+
+.tech-tag {
+    display: inline-flex;
+    align-items: center;
+    background: #f1f8ff;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9em;
+    gap: 8px;
+    transition: all 0.2s ease;
+}
+
+.tech-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.tech-tag i {
+    font-size: 1em;
+    color: #0366d6;
+}
+
+.tech-tag span {
+    white-space: nowrap;
+}
