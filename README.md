@@ -78,3 +78,16 @@
 </table>
 
 Note: All the images above were generated using Gemini 2.5 Flash.
+
+<h1 align="center">Socials</h1>
+<table align="center">
+  <tr>
+    <td align="left" valign="middle">
+      <a href="https://www.linkedin.com/in/vellaandre"><img src="./priv/images/socials/linkedin.jpg" alt="linkedin" width="50"></a>
+    </td>
+        <td align="left" valign="middle">
+      <a href="mailto:andimongh@proton.me
+"><img src="./priv/images/socials/email.jpg" alt="email" width="50"></a>
+    </td>
+  </tr>
+</table>
