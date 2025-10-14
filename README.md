@@ -63,7 +63,44 @@
 
 <h1 align="center">Tech Stack 🧰</h1>
 
-*Empty for now*
+<table>
+  <tr>
+    <td align="left" valign="middle">
+      <img src="./priv/images/tech-stack/elixir.jpg" alt="Elixir" width="150">
+    </td>
+    <td align="left" valign="middle">
+      <b>Elixir</b> is my go-to language for building scalable and fault-tolerant systems.
+    </td>
+    <td align="left" valign="middle">
+      <img src="./priv/images/tech-stack/.net.jpg" alt=".NET" width="150">
+    </td>
+    <td align="left" valign="middle">
+      <b>.NET</b> used for enterprise application needs and keeping in touch with OOP.
+    </td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">
+      <img src="./priv/images/tech-stack/postgres.jpg" alt="PostgreSQL" width="150">
+    </td>
+    <td align="left" valign="middle">
+      <b>PostgreSQL</b> my main SQL database of choice.
+    </td>
+    <td align="left" valign="middle">
+      <img src="./priv/images/tech-stack/python.jpg" alt="Python" width="150">
+    </td>
+    <td align="left" valign="middle">
+      <b>Python</b> mostly for learning machine learning, quick data processing and prototyping.
+    </td>
+  </tr>
+  <tr>
+    <td align="left" valign="middle">
+      <img src="./priv/images/tech-stack/claude.jpg" alt="Claude AI" width="150">
+    </td>
+    <td align="left" valign="middle">
+      <b>Claude AI</b> whenever I need a pair programmer and brainstorming.
+    </td>
+  </tr>
+</table>
 
 ---
 
