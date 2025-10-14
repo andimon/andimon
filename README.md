@@ -97,7 +97,7 @@
       <img src="./priv/images/tech-stack/claude.jpg" alt="Claude AI" width="150">
     </td>
     <td align="left" valign="middle">
-      <b>Claude AI</b> whenever I need a pair programmer and brainstorming.
+      <b>Claude AI</b> whenever I need a pair programmer and a brainstorming session. 
     </td>
   </tr>
 </table>
