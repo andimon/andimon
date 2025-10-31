@@ -7,6 +7,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/syntax.css' | relative_url }}" id="syntax-light">
+    <link rel="stylesheet" href="{{ '/syntax-dark.css' | relative_url }}" id="syntax-dark" disabled>
     {% if page.layout == 'post' %}
     <style>
         .post-content {
@@ -37,13 +39,13 @@
             height: auto;
         }
         .post-body pre {
-            background: #f6f8fa;
+            background: var(--code-bg);
             padding: 15px;
             border-radius: 5px;
             overflow-x: auto;
         }
         .post-body code {
-            background: #f6f8fa;
+            background: var(--code-bg);
             padding: 2px 6px;
             border-radius: 3px;
             font-family: 'Courier New', monospace;
@@ -54,7 +56,7 @@
         .back-link {
             display: inline-block;
             margin-bottom: 20px;
-            color: #0366d6;
+            color: var(--link-color);
             text-decoration: none;
         }
         .back-link:hover {
@@ -64,11 +66,15 @@
     {% endif %}
 </head>
 <body>
+    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
+        <i class="fas fa-moon" id="theme-icon"></i>
+    </button>
+
     <header>
         <h1><a href="{{ '/' | relative_url }}" style="color: inherit; text-decoration: none;">{{ site.title }}</a></h1>
         <nav style="margin-top: 10px;">
-            <a href="{{ '/' | relative_url }}" style="margin-right: 15px; text-decoration: none; color: #0366d6;">Home</a>
-            <a href="{{ '/blog' | relative_url }}" style="text-decoration: none; color: #0366d6;">Blog</a>
+            <a href="{{ '/' | relative_url }}" style="margin-right: 15px; text-decoration: none;">Home</a>
+            <a href="{{ '/blog' | relative_url }}" style="text-decoration: none;">Blog</a>
         </nav>
     </header>
 

@@ -162,56 +162,56 @@ style.textContent = `
     .tech-tag {
         display: inline-flex;
         align-items: center;
-        background: #f1f8ff;
+        background: var(--tag-bg);
         padding: 5px 12px;
         border-radius: 20px;
         font-size: 0.9em;
         gap: 8px;
         transition: all 0.2s ease;
         text-decoration: none;
-        color: inherit;
+        color: var(--text-color);
         margin: 3px;
+        border: 1px solid var(--border-color);
     }
-    
+
     .tech-tag:hover {
         transform: translateY(-2px);
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        color: #0366d6;
+        box-shadow: 0 2px 5px var(--tag-hover-shadow);
+        color: var(--link-color);
     }
-    
+
     .tech-tag i {
         font-size: 1em;
-        color: #0366d6;
+        color: var(--link-color);
     }
 
     /* Social Tags - Similar to tech tags but with different colors */
     .social-tag {
         display: inline-flex;
         align-items: center;
-        background: #f5f5f5;
+        background: var(--tag-bg);
         padding: 5px 12px;
         border-radius: 20px;
         font-size: 0.9em;
         gap: 8px;
         transition: all 0.2s ease;
         text-decoration: none;
-        color: #333;
+        color: var(--text-color);
         margin: 3px;
-        border: 1px solid #e1e4e8;
+        border: 1px solid var(--border-color);
     }
-    
+
     .social-tag:hover {
         transform: translateY(-2px);
-        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-        background: #f8f9fa;
-        color: #0366d6;
+        box-shadow: 0 2px 5px var(--tag-hover-shadow);
+        opacity: 0.8;
     }
-    
+
     .social-tag i {
         font-size: 1em;
-        color: #6a737d;
+        color: var(--link-color);
     }
-    
+
     .social-tag:hover i {
         color: inherit;
     }
@@ -247,4 +247,42 @@ document.addEventListener('DOMContentLoaded', () => {
                 aboutContent.textContent = 'Failed to load content. Please try again later.';
             }
         });
+
+    // Dark mode toggle functionality
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const syntaxLight = document.getElementById('syntax-light');
+    const syntaxDark = document.getElementById('syntax-dark');
+
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+
+    // Apply the saved theme on page load
+    if (currentTheme === 'dark') {
+        document.documentElement.setAttribute('data-theme', 'dark');
+        themeIcon.classList.replace('fa-moon', 'fa-sun');
+        if (syntaxLight) syntaxLight.disabled = true;
+        if (syntaxDark) syntaxDark.disabled = false;
+    }
+
+    // Toggle theme on button click
+    if (themeToggle) {
+        themeToggle.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme');
+
+            if (theme === 'dark') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                localStorage.setItem('theme', 'light');
+                themeIcon.classList.replace('fa-sun', 'fa-moon');
+                if (syntaxLight) syntaxLight.disabled = false;
+                if (syntaxDark) syntaxDark.disabled = true;
+            } else {
+                document.documentElement.setAttribute('data-theme', 'dark');
+                localStorage.setItem('theme', 'dark');
+                themeIcon.classList.replace('fa-moon', 'fa-sun');
+                if (syntaxLight) syntaxLight.disabled = true;
+                if (syntaxDark) syntaxDark.disabled = false;
+            }
+        });
+    }
 });

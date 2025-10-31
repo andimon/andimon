@@ -1,3 +1,28 @@
+/* CSS Variables for Light/Dark Mode */
+:root {
+    --bg-color: #ffffff;
+    --card-bg: #ffffff;
+    --text-color: #24292e;
+    --link-color: #0366d6;
+    --header-bg: #ffffff;
+    --tag-bg: #f1f8ff;
+    --tag-hover-shadow: rgba(0,0,0,0.1);
+    --code-bg: #f6f8fa;
+    --border-color: #e1e4e8;
+}
+
+[data-theme="dark"] {
+    --bg-color: #0d1117;
+    --card-bg: #161b22;
+    --text-color: #c9d1d9;
+    --link-color: #58a6ff;
+    --header-bg: #161b22;
+    --tag-bg: #1f6feb20;
+    --tag-hover-shadow: rgba(255,255,255,0.1);
+    --code-bg: #161b22;
+    --border-color: #30363d;
+}
+
 /* Base Styles */
 body {
     font-family: Arial, sans-serif;
@@ -5,13 +30,44 @@ body {
     max-width: 800px;
     margin: 0 auto;
     padding: 20px;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Dark Mode Toggle */
+.theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    background: var(--tag-bg);
+    border: 1px solid var(--border-color);
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.theme-toggle:hover {
+    transform: scale(1.1);
+    box-shadow: 0 2px 8px var(--tag-hover-shadow);
+}
+
+.theme-toggle i {
+    font-size: 1.2em;
+    color: var(--text-color);
 }
 
 /* Social Links */
 .social-links a {
     margin-right: 15px;
     text-decoration: none;
-    color: #0366d6;
+    color: var(--link-color);
 }
 
 .social-links a:hover {
@@ -29,7 +85,7 @@ body {
 .tech-tag {
     display: inline-flex;
     align-items: center;
-    background: #f1f8ff;
+    background: var(--tag-bg);
     padding: 5px 12px;
     border-radius: 20px;
     font-size: 0.9em;
@@ -39,14 +95,19 @@ body {
 
 .tech-tag:hover {
     transform: translateY(-2px);
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    box-shadow: 0 2px 5px var(--tag-hover-shadow);
 }
 
 .tech-tag i {
     font-size: 1em;
-    color: #0366d6;
+    color: var(--link-color);
 }
 
 .tech-tag span {
     white-space: nowrap;
+}
+
+/* Links */
+a {
+    color: var(--link-color);
 }
