@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Welcome to My Blog"
-date: 2025-10-31 12:00:00 +0000
+date: 2025-10-30 12:00:00 +0000
 author: "Andre' Vella"
 tags: [welcome, introduction]
 excerpt: "Welcome to my blog! This is my first post where I introduce what this blog will be about and what you can expect to find here."
