@@ -1,0 +1,48 @@
+# Site settings
+title: "Andre' Vella"
+description: "Backend-focused Software Engineer with a passion for finding the simplest solutions to complex problems"
+url: "https://andimon.github.io"
+baseurl: ""
+
+# Author
+author:
+  name: "Andre' Vella"
+  email: "andimongh@proton.me"
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:year/:month/:day/:title/
+
+# Collections
+collections:
+  posts:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+# Plugins
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+# Defaults
+defaults:
+  - scope:
+      path: ""
+      type: "posts"
+    values:
+      layout: "post"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
