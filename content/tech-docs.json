@@ -1,0 +1,15 @@
+{
+  "elixir": "https://elixir-lang.org/docs.html",
+  "postgresql": "https://www.postgresql.org/docs/",
+  ".net": "https://docs.microsoft.com/en-us/dotnet/",
+  "javascript": "https://developer.mozilla.org/en-US/docs/Web/JavaScript",
+  "typescript": "https://www.typescriptlang.org/docs/",
+  "react": "https://reactjs.org/docs/getting-started.html",
+  "node": "https://nodejs.org/en/docs/",
+  "python": "https://docs.python.org/3/",
+  "docker": "https://docs.docker.com/",
+  "aws": "https://docs.aws.amazon.com/",
+  "git": "https://git-scm.com/doc",
+  "html": "https://developer.mozilla.org/en-US/docs/Web/HTML",
+  "css": "https://developer.mozilla.org/en-US/docs/Web/CSS"
+}
