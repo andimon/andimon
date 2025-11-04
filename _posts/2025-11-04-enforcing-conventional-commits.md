@@ -8,9 +8,12 @@ excerpt: "Enforcing Conventional Commits"
 ---
 
 1. Create a global hooks directory
-bashmkdir -p ~/.git-hooks
+```bash
+mkdir -p ~/.git-hooks
+```
 2. Save the hook script
-bash# Create the commit-msg hook file
+```bash
+# Create the commit-msg hook file
 cat > ~/.git-hooks/commit-msg << 'EOF'
 #!/bin/bash
 # Conventional commit pattern
@@ -38,20 +41,26 @@ fi
 echo "✅ Commit message follows conventional format"
 exit 0
 EOF
-3. Make it executable
-bashchmod +x ~/.git-hooks/commit-msg
-4. Configure git to use this directory globally
-bashgit config --global core.hooksPath ~/.git-hooks
-✅ Done!
-Now all your git repositories will use this hook. Test it with a new commit:
-bash# This should fail
-git commit -m "bad commit message"
+```
 
+3. Make it executable
+```bash
+chmod +x ~/.git-hooks/commit-msg
+```
+4. Configure git to use this directory globally
+```bash
+git config --global core.hooksPath ~/.git-hooks
+```
+Now all your git repositories will use this hook. Test it with a new commit:
+
+```bash
+# This should fail
+git commit -m "bad commit message"
+```
+
+```bash
 # This should succeed
 git commit -m "feat: add new feature"
-Note:
+```
 
-This requires Git 2.9+
-This will apply to all existing and new repositories
-Repository-specific hooks in .git/hooks will be ignored once you set a global hooks path
-To disable globally: git config --global --unset core.hooksPath
+Note: Claude was used to generate the conventional-commit script.
