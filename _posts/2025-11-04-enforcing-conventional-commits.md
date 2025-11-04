@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Enforcing Conventional Commits"
-date: 2025-11-04 17:00:00 +0000
+date: 2025-11-04 16:00:00 +0000
 author: "Andre' Vella"
 tags: [git, conventional-commits]
 excerpt: "Enforcing Conventional Commits"
