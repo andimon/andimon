@@ -126,7 +126,7 @@ title: Blog
     <label for="tag-filter" class="filter-label">Filter by tag:</label>
     <select id="tag-filter" class="filter-select">
         <option value="all">All</option>
-        {% assign all_tags = site.posts | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
+        {% assign all_tags = site.blogs | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
         {% for tag in all_tags %}
             {% if tag != "" %}
             <option value="{{ tag }}">{{ tag }}</option>
@@ -138,9 +138,9 @@ title: Blog
 <div class="blog-container">
     <h2>Blog Posts</h2>
 
-    {% if site.posts.size > 0 %}
+    {% if site.blogs.size > 0 %}
     <ul class="blog-posts">
-        {% for post in site.posts %}
+        {% for post in site.blogs %}
         <li class="blog-post-item" data-tags="{{ post.tags | join: ',' }}">
             <h3 class="blog-post-title">
                 <a href="{{ post.url | relative_url }}">{{ post.title }}</a>

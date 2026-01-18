@@ -1,4 +1,4 @@
 ---
 layout: home
-title: "Hi, I'm Andre' Vella"
+title: "Andre Vella"
 ---

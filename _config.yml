@@ -1,10 +1,9 @@
-# Site settings
 title: "Andre' Vella"
-description: "Backend-focused Software Engineer with a passion for finding the simplest solutions to complex problems"
-url: "https://andimon.github.io"
+
+description: "Andre Vella is a backend-focused software engineer passionate about solving problems in the simplest way possible."
+url: "https://www.andrevella.dev"
 baseurl: ""
 
-# Author
 author:
   name: "Andre' Vella"
   email: "andimongh@proton.me"
@@ -15,9 +14,16 @@ permalink: /blog/:year/:month/:day/:title/
 
 # Collections
 collections:
-  posts:
+  blogs:
     output: true
     permalink: /blog/:year/:month/:day/:title/
+  projects:
+    output: true
+    permalink: /project/:year/:month/:day/:title/
+
+# Include files and directories
+include:
+  - content
 
 # Exclude from processing
 exclude:
@@ -30,18 +36,16 @@ exclude:
   - vendor/gems/
   - vendor/ruby/
 
-# Plugins
 plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
-# Defaults
 defaults:
   - scope:
       path: ""
-      type: "posts"
+      type: "blogs"
     values:
-      layout: "post"
+      layout: "blog"
   - scope:
       path: ""
     values:

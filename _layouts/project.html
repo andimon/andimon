@@ -1,0 +1,34 @@
+---
+layout: default
+---
+
+<div class="post-content">
+    <a href="{{ '/project' | relative_url }}" class="back-link">
+        <i class="fas fa-arrow-left"></i> See other cool projects
+    </a>
+
+    <article class="post">
+        <header class="post-header">
+            <h1 class="post-title">{{ page.title }}</h1>
+            <div class="post-meta">
+                <time datetime="{{ page.date | date_to_xmlschema }}">
+                    {{ page.date | date: "%B %d, %Y" }}
+                </time>
+                {% if page.author %}
+                <span> • {{ page.author }}</span>
+                {% endif %}
+                {% if page.tags %}
+                <div style="margin-top: 10px;">
+                    {% for tag in page.tags %}
+                    <span style="background: #f1f8ff; padding: 3px 10px; border-radius: 10px; font-size: 0.85em; margin-right: 5px;">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </header>
+
+        <div class="post-body">
+            {{ content }}
+        </div>
+    </article>
+</div>

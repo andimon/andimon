@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog
 title: "Enforcing Conventional Commits"
 date: 2025-11-04 16:00:00 +0000
 author: "Andre' Vella"

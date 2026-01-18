@@ -1,5 +1,5 @@
 ---
-layout: post
+layout: blog
 title: "Elixir Best Practices"
 date: 2025-10-30 12:00:00 +0000
 author: "Andre' Vella"
