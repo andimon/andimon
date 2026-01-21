@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -16,76 +17,87 @@
             margin: 0 auto;
             padding: 20px;
         }
+
         .post-header {
             margin-bottom: 30px;
         }
+
         .post-title {
             font-size: 2.5em;
             margin-bottom: 10px;
         }
+
         .post-meta {
             color: #6a737d;
             font-size: 0.9em;
         }
+
         .post-body {
             line-height: 1.6;
         }
-        .post-body h1, .post-body h2, .post-body h3 {
+
+        .post-body h1,
+        .post-body h2,
+        .post-body h3 {
             margin-top: 30px;
             margin-bottom: 15px;
         }
+
         .post-body img {
             max-width: 100%;
             height: auto;
         }
+
         .post-body pre {
             background: var(--code-bg);
             padding: 15px;
             border-radius: 5px;
             overflow-x: auto;
         }
+
         .post-body code {
             background: var(--code-bg);
             padding: 2px 6px;
             border-radius: 3px;
             font-family: 'Courier New', monospace;
         }
+
         .post-body pre code {
             padding: 0;
         }
+
         .back-link {
             display: inline-block;
             margin-bottom: 20px;
             color: var(--link-color);
             text-decoration: none;
         }
+
         .back-link:hover {
             text-decoration: underline;
         }
     </style>
     {% endif %}
 </head>
+
 <body>
     <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
         <i class="fas fa-moon" id="theme-icon"></i>
     </button>
 
     <header>
-            <div class="header-left">
-        <div class="avatar-wrapper">
-            <img
-                src="{{ '/priv/images/avatar.png' | relative_url }}"
-                alt="Avatar"
-                class="avatar"
-            />
-        </div>
-
-        <h1>
-            <a href="{{ '/' | relative_url }}" style="color: inherit; text-decoration: none;">
-                {{ site.title }}
+        <div class="header-left">
+            <a href="{{ '/' | relative_url }}">
+                <div class="avatar-wrapper">
+                    <img src="{{ '/priv/images/avatar.png' | relative_url }}" alt="Avatar" class="avatar" />
+                </div>
             </a>
-        </h1>
-    </div>
+            <h1>
+                <a href="{{ '/' | relative_url }}" style="color: inherit; text-decoration: none;">
+                    {{ site.title }}
+                </a>
+            </h1>
+        </div>
         <nav style="margin-top: 10px;">
             <a href="{{ '/' | relative_url }}" style="margin-right: 15px; text-decoration: none;">Home</a>
             <a href="{{ '/project' | relative_url }}" style="margin-right: 15px; text-decoration: none;">Projects</a>
@@ -99,4 +111,5 @@
 
     <script src="{{ '/js/main.js' | relative_url }}"></script>
 </body>
+
 </html>
