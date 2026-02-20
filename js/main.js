@@ -94,7 +94,7 @@ function updateTechnologies(technologies) {
             const iconClass = getTechIcon(techName);
             
             return `
-                <a href="${docUrl}" target="_blank" rel="noopener noreferrer" class="tech-tag">
+                <a href="${docUrl}" target="_blank" rel="noopener noreferrer" class="tech-tag d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill border text-decoration-none">
                     <i class="${iconClass}"></i>
                     <span>${techName}</span>
                 </a>
@@ -146,7 +146,7 @@ function updateSocialLinks(socials) {
             const displayName = platform.charAt(0).toUpperCase() + platform.slice(1);
             
             return `
-                <a href="${url}" target="_blank" rel="noopener noreferrer" class="social-tag">
+                <a href="${url}" target="_blank" rel="noopener noreferrer" class="social-tag d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill border text-decoration-none">
                     <i class="fab ${iconClass}"></i>
                     <span>${displayName}</span>
                 </a>
@@ -154,69 +154,6 @@ function updateSocialLinks(socials) {
         })
         .join('');
 }
-
-// Update the CSS to style the tech-tag and social-tag links
-const style = document.createElement('style');
-style.textContent = `
-    /* Technology Tags */
-    .tech-tag {
-        display: inline-flex;
-        align-items: center;
-        background: var(--tag-bg);
-        padding: 5px 12px;
-        border-radius: 20px;
-        font-size: 0.9em;
-        gap: 8px;
-        transition: all 0.2s ease;
-        text-decoration: none;
-        color: var(--text-color);
-        margin: 3px;
-        border: 1px solid var(--border-color);
-    }
-
-    .tech-tag:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 2px 5px var(--tag-hover-shadow);
-        color: var(--link-color);
-    }
-
-    .tech-tag i {
-        font-size: 1em;
-        color: var(--link-color);
-    }
-
-    /* Social Tags - Similar to tech tags but with different colors */
-    .social-tag {
-        display: inline-flex;
-        align-items: center;
-        background: var(--tag-bg);
-        padding: 5px 12px;
-        border-radius: 20px;
-        font-size: 0.9em;
-        gap: 8px;
-        transition: all 0.2s ease;
-        text-decoration: none;
-        color: var(--text-color);
-        margin: 3px;
-        border: 1px solid var(--border-color);
-    }
-
-    .social-tag:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 2px 5px var(--tag-hover-shadow);
-        opacity: 0.8;
-    }
-
-    .social-tag i {
-        font-size: 1em;
-        color: var(--link-color);
-    }
-
-    .social-tag:hover i {
-        color: inherit;
-    }
-`;
-document.head.appendChild(style);
 
 // Wait for the DOM to be fully loaded
 document.addEventListener('DOMContentLoaded', () => {
@@ -249,40 +186,44 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
     // Dark mode toggle functionality
-    const themeToggle = document.getElementById('theme-toggle');
-    const themeIcon = document.getElementById('theme-icon');
+    const themeToggleButtons = document.querySelectorAll('[data-theme-toggle]');
+    const themeIcons = document.querySelectorAll('.theme-icon');
     const syntaxLight = document.getElementById('syntax-light');
     const syntaxDark = document.getElementById('syntax-dark');
 
+    const applyTheme = (theme, persist = true) => {
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcons.forEach((icon) => {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            });
+            if (syntaxLight) syntaxLight.disabled = true;
+            if (syntaxDark) syntaxDark.disabled = false;
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            themeIcons.forEach((icon) => {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            });
+            if (syntaxLight) syntaxLight.disabled = false;
+            if (syntaxDark) syntaxDark.disabled = true;
+        }
+
+        if (persist) {
+            localStorage.setItem('theme', theme);
+        }
+    };
+
     // Check for saved theme preference or default to light mode
     const currentTheme = localStorage.getItem('theme') || 'light';
-
-    // Apply the saved theme on page load
-    if (currentTheme === 'dark') {
-        document.documentElement.setAttribute('data-theme', 'dark');
-        themeIcon.classList.replace('fa-moon', 'fa-sun');
-        if (syntaxLight) syntaxLight.disabled = true;
-        if (syntaxDark) syntaxDark.disabled = false;
-    }
+    applyTheme(currentTheme, false);
 
     // Toggle theme on button click
-    if (themeToggle) {
-        themeToggle.addEventListener('click', () => {
+    themeToggleButtons.forEach((button) => {
+        button.addEventListener('click', () => {
             const theme = document.documentElement.getAttribute('data-theme');
-
-            if (theme === 'dark') {
-                document.documentElement.setAttribute('data-theme', 'light');
-                localStorage.setItem('theme', 'light');
-                themeIcon.classList.replace('fa-sun', 'fa-moon');
-                if (syntaxLight) syntaxLight.disabled = false;
-                if (syntaxDark) syntaxDark.disabled = true;
-            } else {
-                document.documentElement.setAttribute('data-theme', 'dark');
-                localStorage.setItem('theme', 'dark');
-                themeIcon.classList.replace('fa-moon', 'fa-sun');
-                if (syntaxLight) syntaxLight.disabled = true;
-                if (syntaxDark) syntaxDark.disabled = false;
-            }
+            applyTheme(theme === 'dark' ? 'light' : 'dark');
         });
-    }
+    });
 });

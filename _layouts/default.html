@@ -1,115 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/syntax.css' | relative_url }}" id="syntax-light">
     <link rel="stylesheet" href="{{ '/syntax-dark.css' | relative_url }}" id="syntax-dark" disabled>
-    {% if page.layout == 'post' %}
-    <style>
-        .post-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-
-        .post-header {
-            margin-bottom: 30px;
-        }
-
-        .post-title {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
-
-        .post-meta {
-            color: #6a737d;
-            font-size: 0.9em;
-        }
-
-        .post-body {
-            line-height: 1.6;
-        }
-
-        .post-body h1,
-        .post-body h2,
-        .post-body h3 {
-            margin-top: 30px;
-            margin-bottom: 15px;
-        }
-
-        .post-body img {
-            max-width: 100%;
-            height: auto;
-        }
-
-        .post-body pre {
-            background: var(--code-bg);
-            padding: 15px;
-            border-radius: 5px;
-            overflow-x: auto;
-        }
-
-        .post-body code {
-            background: var(--code-bg);
-            padding: 2px 6px;
-            border-radius: 3px;
-            font-family: 'Courier New', monospace;
-        }
-
-        .post-body pre code {
-            padding: 0;
-        }
-
-        .back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: var(--link-color);
-            text-decoration: none;
-        }
-
-        .back-link:hover {
-            text-decoration: underline;
-        }
-    </style>
-    {% endif %}
 </head>
-
 <body>
-    <button class="theme-toggle" id="theme-toggle" aria-label="Toggle dark mode">
-        <i class="fas fa-moon" id="theme-icon"></i>
+    <button class="theme-toggle btn btn-sm d-none d-lg-inline-flex" id="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+        <i class="fas fa-moon theme-icon"></i>
     </button>
-
-    <header>
-        <div class="header-left">
-            <a href="{{ '/' | relative_url }}">
-                <div class="avatar-wrapper">
-                    <img src="{{ '/priv/images/avatar.png' | relative_url }}" alt="Avatar" class="avatar" />
-                </div>
-            </a>
-            <h1>
-                <a href="{{ '/' | relative_url }}" style="color: inherit; text-decoration: none;">
-                    {{ site.title }}
+    <header class="border-bottom site-header sticky-top">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container-lg">
+                <a class="navbar-brand d-flex align-items-center gap-2" href="{{ '/' | relative_url }}">
+                    <span class="avatar-wrapper">
+                        <img src="{{ '/priv/images/avatar.png' | relative_url }}" alt="Avatar" class="avatar" />
+                    </span>
+                    <span class="fw-semibold">{{ site.title }}</span>
                 </a>
-            </h1>
-        </div>
-        <nav style="margin-top: 10px;">
-            <a href="{{ '/' | relative_url }}" style="margin-right: 15px; text-decoration: none;">Home</a>
-            <a href="{{ '/project' | relative_url }}" style="margin-right: 15px; text-decoration: none;">Projects</a>
-            <a href="{{ '/blog' | relative_url }}" style="text-decoration: none;">Blog</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="collapse navbar-collapse" id="site-nav">
+                    <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 pt-2 pt-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link{% if page.url contains '/project' %} active{% endif %}" href="{{ '/project' | relative_url }}">Projects</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link{% if page.url contains '/blog' %} active{% endif %}" href="{{ '/blog' | relative_url }}">Blog</a>
+                        </li>
+                        <li class="nav-item d-lg-none">
+                            <button class="btn btn-outline-secondary btn-sm mt-2" type="button" data-theme-toggle aria-label="Toggle dark mode">
+                                <i class="fas fa-moon theme-icon me-1"></i>
+                                Theme
+                            </button>
+                        </li>
+                    </ul>
+                </div>
+            </div>
         </nav>
     </header>
-
-    <main>
+    <main class="container-lg py-4">
         {{ content }}
     </main>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ '/js/main.js' | relative_url }}"></script>
 </body>
-
 </html>
