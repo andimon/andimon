@@ -78,6 +78,24 @@ a {
     box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
 }
 
+@media (min-width: 992px) {
+    .navbar > .container-lg {
+        position: relative;
+    }
+
+    .navbar-desktop-center {
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        width: auto;
+        display: flex !important;
+    }
+
+    .navbar-desktop-center .navbar-nav {
+        flex-direction: row;
+    }
+}
+
 .card {
     background: var(--card-bg);
     border: 0.0625rem solid var(--border-color) !important;
