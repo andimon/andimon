@@ -41,7 +41,13 @@ const techDocs = {
     'mocha': 'https://mochajs.org/',
     'nginx': 'https://nginx.org/en/docs/',
     'kubernetes': 'https://kubernetes.io/docs/home/',
-    'docker': 'https://docs.docker.com/'
+    'docker': 'https://docs.docker.com/',
+    'c++': 'https://en.cppreference.com/w/',
+    'prometheus': 'https://prometheus.io/docs/introduction/overview/',
+    'grafana': 'https://grafana.com/docs/',
+    'elasticsearch': 'https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html',
+    'logstash': 'https://www.elastic.co/guide/en/logstash/current/index.html',
+    'kibana': 'https://www.elastic.co/guide/en/kibana/current/index.html'
     // Add more as needed
 };
 

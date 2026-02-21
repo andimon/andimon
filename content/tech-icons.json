@@ -77,5 +77,10 @@
     "npm": "devicon-npm-original-wordmark colored",
     "yarn": "devicon-yarn-plain colored",
     "gulp": "devicon-gulp-plain colored",
-    "grunt": "devicon-grunt-plain colored"
+    "grunt": "devicon-grunt-plain colored",
+    "prometheus": "devicon-prometheus-original colored",
+    "grafana": "devicon-grafana-plain colored",
+    "elasticsearch": "devicon-elasticsearch-plain colored",
+    "logstash": "devicon-logstash-plain colored",
+    "kibana": "devicon-kibana-plain colored"
 }

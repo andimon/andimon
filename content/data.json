@@ -3,7 +3,14 @@
     "technologies": [
         "Elixir",
         "PostgreSQL",
-        ".NET"
+        ".NET",
+        "C++",
+        "Python",
+        "Prometheus",
+        "Grafana",
+        "Elasticsearch",
+        "Logstash",
+        "Kibana"
     ],
     "socials": {
         "github": "https://github.com/andimon",
@@ -96,6 +103,41 @@
             "author": "Ramez Elmasri & Shamkant B. Navathe",
             "link": "https://www.pearson.com/en-us/subject-catalog/p/fundamentals-of-database-systems/P200000003546",
             "total_pages": 1280,
+            "pages_read": 0
+        },
+        {
+            "title": "Programming Elixir 1.6",
+            "author": "Dave Thomas",
+            "link": "https://pragprog.com/titles/elixir16/programming-elixir-1-6/",
+            "total_pages": 364,
+            "pages_read": 0
+        },
+        {
+            "title": "Elixir in Action",
+            "author": "Saša Jurić",
+            "link": "https://www.manning.com/books/elixir-in-action-third-edition",
+            "total_pages": 560,
+            "pages_read": 0
+        },
+        {
+            "title": "Programming Phoenix 1.4",
+            "author": "Chris McCord, Bruce Tate & José Valim",
+            "link": "https://pragprog.com/titles/phoenix14/programming-phoenix-1-4/",
+            "total_pages": 318,
+            "pages_read": 0
+        },
+        {
+            "title": "Programming Phoenix LiveView",
+            "author": "Bruce Tate & Sophie DeBenedetto",
+            "link": "https://pragprog.com/titles/liveview/programming-phoenix-liveview/",
+            "total_pages": 396,
+            "pages_read": 0
+        },
+        {
+            "title": "Build a Large Language Model (From Scratch)",
+            "author": "Sebastian Raschka",
+            "link": "https://www.manning.com/books/build-a-large-language-model-from-scratch",
+            "total_pages": 368,
             "pages_read": 0
         }
     ]
