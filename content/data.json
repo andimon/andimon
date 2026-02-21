@@ -43,34 +43,6 @@
     ],
     "books": [
         {
-            "title": "The C Programming Language",
-            "author": "Brian W. Kernighan & Dennis M. Ritchie",
-            "link": "https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628",
-            "total_pages": 272,
-            "pages_read": 0
-        },
-        {
-            "title": "Haskell: The Craft of Functional Programming",
-            "author": "Simon Thompson",
-            "link": "https://www.haskellcraft.com/",
-            "total_pages": 608,
-            "pages_read": 0
-        },
-        {
-            "title": "Functional Programming in C++",
-            "author": "Ivan Čukić",
-            "link": "https://www.manning.com/books/functional-programming-in-c-plus-plus",
-            "total_pages": 320,
-            "pages_read": 0
-        },
-        {
-            "title": "Fundamentals of Database Systems",
-            "author": "Ramez Elmasri & Shamkant B. Navathe",
-            "link": "https://www.pearson.com/en-us/subject-catalog/p/fundamentals-of-database-systems/P200000003546",
-            "total_pages": 1280,
-            "pages_read": 0
-        },
-        {
             "title": "Think Python",
             "author": "Allen B. Downey",
             "link": "https://greenteapress.com/wp/think-python-3rd-edition/",
@@ -78,10 +50,10 @@
             "pages_read": 0
         },
         {
-            "title": "The C++ Programming Language",
-            "author": "Bjarne Stroustrup",
-            "link": "https://www.stroustrup.com/4th.html",
-            "total_pages": 1376,
+            "title": "The C Programming Language",
+            "author": "Brian W. Kernighan & Dennis M. Ritchie",
+            "link": "https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628",
+            "total_pages": 272,
             "pages_read": 0
         },
         {
@@ -92,10 +64,38 @@
             "pages_read": 0
         },
         {
+            "title": "The C++ Programming Language",
+            "author": "Bjarne Stroustrup",
+            "link": "https://www.stroustrup.com/4th.html",
+            "total_pages": 1376,
+            "pages_read": 0
+        },
+        {
+            "title": "Functional Programming in C++",
+            "author": "Ivan Čukić",
+            "link": "https://www.manning.com/books/functional-programming-in-c-plus-plus",
+            "total_pages": 320,
+            "pages_read": 0
+        },
+        {
+            "title": "Haskell: The Craft of Functional Programming",
+            "author": "Simon Thompson",
+            "link": "https://www.haskellcraft.com/",
+            "total_pages": 608,
+            "pages_read": 0
+        },
+        {
             "title": "Introduction to Algorithms",
             "author": "Cormen, Leiserson, Rivest & Stein",
             "link": "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/",
             "total_pages": 1312,
+            "pages_read": 0
+        },
+        {
+            "title": "Fundamentals of Database Systems",
+            "author": "Ramez Elmasri & Shamkant B. Navathe",
+            "link": "https://www.pearson.com/en-us/subject-catalog/p/fundamentals-of-database-systems/P200000003546",
+            "total_pages": 1280,
             "pages_read": 0
         }
     ]
