@@ -10,7 +10,8 @@
         "Grafana",
         "Elasticsearch",
         "Logstash",
-        "Kibana"
+        "Kibana",
+        "RaspberryPi"
     ],
     "socials": {
         "github": "https://github.com/andimon",
@@ -45,6 +46,14 @@
                 { "name": "Official Tutorial", "link": "https://docs.python.org/3/tutorial/" },
                 { "name": "Real Python", "link": "https://realpython.com/" },
                 { "name": "PyPI", "link": "https://pypi.org/" }
+            ]
+        },
+                {
+            "technology": "RaspberryPi",
+            "icon": "devicon-raspberrypi-plain",
+            "resources": [
+                { "name": "Official Docs", "link": "https://www.raspberrypi.org/documentation/" },
+                { "name": "Cluster Tutorial", "link": "https://www.raspberrypi.com/tutorials/cluster-raspberry-pi-tutorial/" }
             ]
         }
     ],

@@ -47,7 +47,8 @@ const techDocs = {
     'grafana': 'https://grafana.com/docs/',
     'elasticsearch': 'https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html',
     'logstash': 'https://www.elastic.co/guide/en/logstash/current/index.html',
-    'kibana': 'https://www.elastic.co/guide/en/kibana/current/index.html'
+    'kibana': 'https://www.elastic.co/guide/en/kibana/current/index.html',
+    'raspberrypi': 'https://www.raspberrypi.org/documentation/'
     // Add more as needed
 };
 
