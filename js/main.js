@@ -103,6 +103,31 @@ function updateTechnologies(technologies) {
         .join('');
 }
 
+// Function to update books section
+function updateBooks(books) {
+    const booksContainer = document.getElementById('books-list');
+    if (!booksContainer || !Array.isArray(books)) return;
+
+    booksContainer.innerHTML = books.map(book => {
+        const percent = Math.round((book.pages_read / book.total_pages) * 100);
+        return `
+            <div class="mb-3">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                    <div>
+                        <a href="${book.link}" target="_blank" rel="noopener noreferrer" class="fw-semibold text-decoration-none">${book.title}</a>
+                        <span class="text-muted ms-2 small">by ${book.author}</span>
+                    </div>
+                    <span class="small text-muted ms-3 text-nowrap">${percent}%</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: ${percent}%;" aria-valuenow="${percent}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="small text-muted mt-1">${book.pages_read} / ${book.total_pages} pages</div>
+            </div>
+        `;
+    }).join('');
+}
+
 // Function to update social links section
 function updateSocialLinks(socials) {
     const socialsContainer = document.getElementById('social-links');
@@ -175,6 +200,11 @@ document.addEventListener('DOMContentLoaded', () => {
             // Update social links
             if (data.socials) {
                 updateSocialLinks(data.socials);
+            }
+
+            // Update books
+            if (data.books) {
+                updateBooks(data.books);
             }
         })
         .catch(error => {

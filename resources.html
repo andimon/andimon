@@ -1,0 +1,71 @@
+---
+layout: default
+title: Resources
+---
+
+<h2 class="h4 mb-3">Resources</h2>
+
+<div id="tech-resources" class="row g-3 mb-4">Loading...</div>
+
+<div class="card border-0 shadow-sm mb-4">
+    <div class="card-body">
+        <h3 class="h6 text-muted mb-3">Books</h3>
+        <div id="books-list">Loading books...</div>
+    </div>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    fetch('{{ "/content/data.json" | relative_url }}')
+        .then(response => response.json())
+        .then(data => {
+            if (data.tech_resources) {
+                const techContainer = document.getElementById('tech-resources');
+                techContainer.innerHTML = data.tech_resources.map(item => `
+                    <div class="col-12 col-md-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <h3 class="h6 mb-3 d-flex align-items-center gap-2">
+                                    <i class="${item.icon}"></i>
+                                    ${item.technology}
+                                </h3>
+                                <ul class="list-unstyled mb-0">
+                                    ${item.resources.map(r => `
+                                        <li class="mb-1">
+                                            <a href="${r.link}" target="_blank" rel="noopener noreferrer" class="text-decoration-none small">
+                                                <i class="fas fa-arrow-right me-1 small"></i>${r.name}
+                                            </a>
+                                        </li>
+                                    `).join('')}
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+
+            if (data.books) {
+                const booksContainer = document.getElementById('books-list');
+                booksContainer.innerHTML = data.books.map(book => {
+                    const percent = Math.round((book.pages_read / book.total_pages) * 100);
+                    return `
+                        <div class="mb-3">
+                            <div class="d-flex justify-content-between align-items-start mb-1">
+                                <div>
+                                    <a href="${book.link}" target="_blank" rel="noopener noreferrer" class="fw-semibold text-decoration-none">${book.title}</a>
+                                    <span class="text-muted ms-2 small">by ${book.author}</span>
+                                </div>
+                                <span class="small text-muted ms-3 text-nowrap">${percent}%</span>
+                            </div>
+                            <div class="progress">
+                                <div class="progress-bar" role="progressbar" style="width: ${percent}%;" aria-valuenow="${percent}" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                            <div class="small text-muted mt-1">${book.pages_read} / ${book.total_pages} pages</div>
+                        </div>
+                    `;
+                }).join('');
+            }
+        })
+        .catch(error => console.error('Error loading resources:', error));
+});
+</script>
