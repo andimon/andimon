@@ -57,5 +57,36 @@
     </main>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ '/js/main.js' | relative_url }}"></script>
+    <script type="module">
+        import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@11/dist/mermaid.esm.min.mjs';
+
+        // Initialize mermaid with theme support
+        mermaid.initialize({
+            startOnLoad: false,
+            theme: document.documentElement.getAttribute('data-bs-theme') === 'dark' ? 'dark' : 'default',
+            flowchart: {
+                useMaxWidth: true,
+                htmlLabels: true,
+                curve: 'basis'
+            },
+            themeVariables: {
+                fontSize: '14px'
+            }
+        });
+
+        // Convert kramdown's code blocks to mermaid-ready format
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('code.language-mermaid').forEach((block) => {
+                const pre = block.parentElement;
+                const container = document.createElement('div');
+                container.className = 'mermaid';
+                container.textContent = block.textContent;
+                pre.parentElement.replaceChild(container, pre);
+            });
+
+            // Render all mermaid diagrams
+            mermaid.run();
+        });
+    </script>
 </body>
 </html>
