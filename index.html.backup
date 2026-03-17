@@ -20,7 +20,7 @@
         </section>
 
         <section id="technologies">
-            <h2>Technologies I am currently working with</h2>
+            <h2>Technologies I am currently using</h2>
             <div id="technologies-list" class="technologies">Loading technologies...</div>
         </section>
 

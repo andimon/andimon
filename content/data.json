@@ -11,7 +11,16 @@
         "Elasticsearch",
         "Logstash",
         "Kibana",
-        "RaspberryPi"
+        "RaspberryPi",
+        "LaTeX",
+        "FreeCAD",
+        "Blender",
+        "Markdown",
+        "Azure",
+        "AWS",
+        "Obsidian",
+        "JavaScript",
+        "3D Printing"
     ],
     "socials": {
         "github": "https://github.com/andimon",

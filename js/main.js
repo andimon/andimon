@@ -48,7 +48,15 @@ const techDocs = {
     'elasticsearch': 'https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html',
     'logstash': 'https://www.elastic.co/guide/en/logstash/current/index.html',
     'kibana': 'https://www.elastic.co/guide/en/kibana/current/index.html',
-    'raspberrypi': 'https://www.raspberrypi.org/documentation/'
+    'raspberrypi': 'https://www.raspberrypi.org/documentation/',
+    'latex': 'https://www.latex-project.org/help/documentation/',
+    'blender': 'https://docs.blender.org/',
+    'markdown': 'https://www.markdownguide.org/getting-started/',
+    'obsidian': 'https://help.obsidian.md/',
+    'freecad': 'https://wiki.freecad.org/',
+    '3d printing': 'https://en.wikipedia.org/wiki/3D_printing',
+    'azure': 'https://learn.microsoft.com/azure/',
+    'aws': 'https://docs.aws.amazon.com/'
     // Add more as needed
 };
 

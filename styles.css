@@ -155,6 +155,31 @@ a {
     object-fit: cover;
 }
 
+.navbar-brand:hover .avatar,
+.navbar-brand:focus-visible .avatar,
+.site-header:has(.nav-link:hover) .avatar,
+.site-header:has(.nav-link:focus-visible) .avatar {
+    animation: avatar-spin 0.9s linear infinite;
+}
+
+@keyframes avatar-spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .navbar-brand:hover .avatar,
+    .navbar-brand:focus-visible .avatar,
+    .site-header:has(.nav-link:hover) .avatar,
+    .site-header:has(.nav-link:focus-visible) .avatar {
+        animation: none;
+    }
+}
+
 html[data-theme="dark"] .avatar {
     filter: invert(1);
 }
