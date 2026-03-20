@@ -1,50 +1,41 @@
 ---
 layout: default
 ---
-<section id="about" class="mb-4">
-    <div class="card border-0 shadow-sm">
-        <div class="card-body">
-            <h2 class="h4 mb-3">About Me</h2>
-            <div id="about-content">Loading...</div>
-        </div>
-    </div>
-</section>
-
-<section id="technologies" class="mb-4">
-    <div class="card border-0 shadow-sm">
-        <div class="card-body">
-            <h2 class="h4 mb-3">Technologies I am currently working with</h2>
-            <div id="technologies-list" class="technologies">Loading technologies...</div>
-        </div>
-    </div>
-</section>
-
-<section id="projects" class="mb-4">
-    <div class="card border-0 shadow-sm">
-        <div class="card-body">
-            <h2 class="h4 mb-3">Featured Projects</h2>
-            <div class="list-group list-group-flush">
-                {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
-                {% for project in sorted_projects limit:3 %}
-                <a href="{{ project.url | relative_url }}" class="list-group-item list-group-item-action px-0 border-0 border-bottom">
-                    {{ project.title }}
-                </a>
-                {% endfor %}
+<div class="row g-3">
+    <!-- About (left side) -->
+    <div class="col-md-6">
+        <section id="about" class="h-100">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+                    <h2 class="h4 mb-3">Hey there 👋</h2>
+                    <div id="about-content">Loading...</div>
+                </div>
             </div>
-            <div class="text-center mt-3">
-                <a href="{{ '/project' | relative_url }}" class="btn btn-outline-secondary btn-sm">
-                    View All Projects <i class="fas fa-arrow-right ms-1"></i>
-                </a>
-            </div>
-        </div>
+        </section>
     </div>
-</section>
 
-<section id="socials">
-    <div class="card border-0 shadow-sm">
-        <div class="card-body">
-            <h2 class="h4 mb-3">Connect With Me</h2>
-            <div id="social-links" class="social-links">Loading social links...</div>
-        </div>
+    <!-- Right side -->
+    <div class="col-md-6">
+        <section id="info">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body">
+
+                    <!-- Technologies -->
+                    <h2 class="h4 mb-3">Tech Stack</h2>
+                    <div id="technologies-list" class="technologies mb-4">
+                        Loading technologies...
+                    </div>
+
+                    <hr>
+
+                    <!-- Socials -->
+                    <h2 class="h4 mb-3 mt-4">Connect With Me</h2>
+                    <div id="social-links" class="social-links">
+                        Loading social links...
+                    </div>
+
+                </div>
+            </div>
+        </section>
     </div>
-</section>
+</div>

@@ -1,5 +1,5 @@
 {
-    "about": "Hello! I'm Andre' Vella, a backend-focused Software Engineer with a passion for finding the simplest solutions to complex problems. Right now I am working as a Software Engineer at <a href='https://yolo.com/' target='_blank' rel='noopener noreferrer'>Yolo Group</a> for <a href='https://hub88.io/' target='_blank' rel='noopener noreferrer'>Hub88</a>, and a part-time research support officer at the University of Malta contributing to the <a href='https://www.knowledgefabric.io/' target='_blank' rel='noopener noreferrer'>Knowledge Fabric</a> project.",
+    "about": "I'm Andre' Vella, a backend-focused Software Engineer, interested in building simple, effective solutions to problems. I work at <a href='https://yolo.com/' target='_blank' rel='noopener noreferrer'>Yolo Group</a> (Hub88) and contribute to the <a href='https://www.knowledgefabric.io/' target='_blank' rel='noopener noreferrer'>Knowledge Fabric</a> project at the University of Malta as a part-time Research Support Officer. Outside of work, I enjoy 3D printing, spending time with animals, and experimenting with new technologies.",
     "technologies": [
         "Elixir",
         "PostgreSQL",
@@ -31,38 +31,80 @@
             "technology": "Elixir",
             "icon": "devicon-elixir-plain",
             "resources": [
-                { "name": "Official Docs", "link": "https://elixir-lang.org/docs.html" },
-                { "name": "Getting Started", "link": "https://elixir-lang.org/getting-started/introduction.html" },
-                { "name": "Elixir School", "link": "https://elixirschool.com/" },
-                { "name": "HexDocs", "link": "https://hexdocs.pm/" }
+                {
+                    "name": "Official Docs",
+                    "link": "https://elixir-lang.org/docs.html"
+                },
+                {
+                    "name": "Getting Started",
+                    "link": "https://elixir-lang.org/getting-started/introduction.html"
+                },
+                {
+                    "name": "Elixir School",
+                    "link": "https://elixirschool.com/"
+                },
+                {
+                    "name": "HexDocs",
+                    "link": "https://hexdocs.pm/"
+                }
             ]
         },
         {
             "technology": ".NET",
             "icon": "devicon-dot-net-plain",
             "resources": [
-                { "name": "Official Docs", "link": "https://docs.microsoft.com/en-us/dotnet/" },
-                { "name": "C# Docs", "link": "https://docs.microsoft.com/en-us/dotnet/csharp/" },
-                { "name": ".NET Learn", "link": "https://dotnet.microsoft.com/en-us/learn" },
-                { "name": "NuGet", "link": "https://www.nuget.org/" }
+                {
+                    "name": "Official Docs",
+                    "link": "https://docs.microsoft.com/en-us/dotnet/"
+                },
+                {
+                    "name": "C# Docs",
+                    "link": "https://docs.microsoft.com/en-us/dotnet/csharp/"
+                },
+                {
+                    "name": ".NET Learn",
+                    "link": "https://dotnet.microsoft.com/en-us/learn"
+                },
+                {
+                    "name": "NuGet",
+                    "link": "https://www.nuget.org/"
+                }
             ]
         },
         {
             "technology": "Python",
             "icon": "devicon-python-plain",
             "resources": [
-                { "name": "Official Docs", "link": "https://docs.python.org/3/" },
-                { "name": "Official Tutorial", "link": "https://docs.python.org/3/tutorial/" },
-                { "name": "Real Python", "link": "https://realpython.com/" },
-                { "name": "PyPI", "link": "https://pypi.org/" }
+                {
+                    "name": "Official Docs",
+                    "link": "https://docs.python.org/3/"
+                },
+                {
+                    "name": "Official Tutorial",
+                    "link": "https://docs.python.org/3/tutorial/"
+                },
+                {
+                    "name": "Real Python",
+                    "link": "https://realpython.com/"
+                },
+                {
+                    "name": "PyPI",
+                    "link": "https://pypi.org/"
+                }
             ]
         },
-                {
+        {
             "technology": "RaspberryPi",
             "icon": "devicon-raspberrypi-plain",
             "resources": [
-                { "name": "Official Docs", "link": "https://www.raspberrypi.org/documentation/" },
-                { "name": "Cluster Tutorial", "link": "https://www.raspberrypi.com/tutorials/cluster-raspberry-pi-tutorial/" }
+                {
+                    "name": "Official Docs",
+                    "link": "https://www.raspberrypi.org/documentation/"
+                },
+                {
+                    "name": "Cluster Tutorial",
+                    "link": "https://www.raspberrypi.com/tutorials/cluster-raspberry-pi-tutorial/"
+                }
             ]
         }
     ],
