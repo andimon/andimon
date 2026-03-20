@@ -82,5 +82,11 @@
     "grafana": "devicon-grafana-plain colored",
     "elasticsearch": "devicon-elasticsearch-plain colored",
     "logstash": "devicon-logstash-plain colored",
-    "kibana": "devicon-kibana-plain colored"
+    "kibana": "devicon-kibana-plain colored",
+    "latex": "devicon-latex-original colored",
+    "blender": "devicon-blender-original colored",
+    "3d printing": "fas fa-cube",
+    "3d printer": "fas fa-cube",
+    "markdown": "devicon-markdown-original colored",
+    "obsidian": "fas fa-book"
 }

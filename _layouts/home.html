@@ -19,6 +19,27 @@ layout: default
     </div>
 </section>
 
+<section id="projects" class="mb-4">
+    <div class="card border-0 shadow-sm">
+        <div class="card-body">
+            <h2 class="h4 mb-3">Featured Projects</h2>
+            <div class="list-group list-group-flush">
+                {% assign sorted_projects = site.projects | sort: 'date' | reverse %}
+                {% for project in sorted_projects limit:3 %}
+                <a href="{{ project.url | relative_url }}" class="list-group-item list-group-item-action px-0 border-0 border-bottom">
+                    {{ project.title }}
+                </a>
+                {% endfor %}
+            </div>
+            <div class="text-center mt-3">
+                <a href="{{ '/project' | relative_url }}" class="btn btn-outline-secondary btn-sm">
+                    View All Projects <i class="fas fa-arrow-right ms-1"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
 <section id="socials">
     <div class="card border-0 shadow-sm">
         <div class="card-body">
