@@ -1,35 +1,37 @@
 :root {
-    --bg-color: #f8fafc;
-    --card-bg: #ffffff;
-    --text-color: #1f2937;
-    --link-color: #0d6efd;
-    --header-bg: #ffffff;
-    --tag-bg: #e7f1ff;
-    --tag-hover-shadow: rgba(0, 0, 0, 0.12);
-    --code-bg: #f6f8fa;
-    --border-color: #d0d7de;
+    --bg-color: #f6f2cb;
+    --card-bg: #faf8e8;
+    --text-color: #33211d;
+    --link-color: #a4796d;
+    --header-bg: #f6f2cb;
+    --tag-bg: rgba(176, 137, 105, 0.15);
+    --tag-hover-shadow: rgba(51, 33, 29, 0.15);
+    --code-bg: rgba(176, 137, 105, 0.1);
+    --border-color: #b08969;
     --bs-body-bg: var(--bg-color);
     --bs-body-color: var(--text-color);
-    --bs-secondary-color: #4b5563;
-    --bs-tertiary-color: #6b7280;
+    --bs-secondary-color: #b08969;
+    --bs-tertiary-color: #a4796d;
     --bs-border-color: var(--border-color);
+    --bs-card-bg: var(--card-bg);
 }
 
 [data-theme="dark"] {
-    --bg-color: #0d1117;
-    --card-bg: #161b22;
-    --text-color: #e6edf3;
-    --link-color: #58a6ff;
-    --header-bg: #161b22;
-    --tag-bg: #1f6feb20;
-    --tag-hover-shadow: rgba(255, 255, 255, 0.1);
-    --code-bg: #161b22;
-    --border-color: #30363d;
+    --bg-color: #33211d;
+    --card-bg: #3e2820;
+    --text-color: #f6f2cb;
+    --link-color: #cc915c;
+    --header-bg: #3e2820;
+    --tag-bg: rgba(164, 121, 109, 0.2);
+    --tag-hover-shadow: rgba(246, 242, 203, 0.1);
+    --code-bg: #3e2820;
+    --border-color: #a4796d;
     --bs-body-bg: var(--bg-color);
     --bs-body-color: var(--text-color);
-    --bs-secondary-color: #c1cad4;
-    --bs-tertiary-color: #a5b1bf;
+    --bs-secondary-color: #b08969;
+    --bs-tertiary-color: #a4796d;
     --bs-border-color: var(--border-color);
+    --bs-card-bg: var(--card-bg);
 }
 
 body {
@@ -75,7 +77,7 @@ a {
 }
 
 .navbar-toggler:focus {
-    box-shadow: 0 0 0 0.2rem rgba(13, 110, 253, 0.25);
+    box-shadow: 0 0 0 0.2rem rgba(176, 137, 105, 0.25);
 }
 
 @media (min-width: 992px) {
@@ -117,7 +119,7 @@ a {
 .form-select:focus,
 .form-control:focus {
     border-color: var(--link-color);
-    box-shadow: 0 0 0 0.25rem rgba(13, 110, 253, 0.2);
+    box-shadow: 0 0 0 0.25rem rgba(176, 137, 105, 0.25);
 }
 
 .theme-toggle {
