@@ -271,4 +271,26 @@ document.addEventListener('DOMContentLoaded', () => {
             applyTheme(theme === 'dark' ? 'light' : 'dark');
         });
     });
+
+    // Dynamic dog animation stopping point
+    function updateDogStoppingPoint() {
+        const navbar = document.querySelector('.navbar');
+        const burgerButton = document.querySelector('.navbar-toggler');
+
+        if (navbar) {
+            // Check if burger button is visible (mobile mode)
+            if (burgerButton && burgerButton.offsetParent !== null) {
+                const burgerRect = burgerButton.getBoundingClientRect();
+                const stopDistance = window.innerWidth - burgerRect.left + 20; // 20px buffer
+                navbar.style.setProperty('--dog-stop-distance', `${stopDistance}px`);
+            } else {
+                // Desktop mode - full width
+                navbar.style.setProperty('--dog-stop-distance', '40px');
+            }
+        }
+    }
+
+    // Update on load and resize
+    updateDogStoppingPoint();
+    window.addEventListener('resize', updateDogStoppingPoint);
 });
