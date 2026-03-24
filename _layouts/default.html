@@ -17,6 +17,52 @@
     </button>
     <header class="border-bottom site-header sticky-top">
         <nav class="navbar navbar-expand-lg">
+            <div class="dog">
+                <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" aria-label="moving sausage dog">
+                    <!-- tail -->
+                    <g class="tail">
+                        <path d="M92 40 Q108 30 104 16" fill="none" stroke="#5b3a29" stroke-width="4" stroke-linecap="round"/>
+                    </g>
+
+                    <!-- body -->
+                    <rect x="34" y="30" width="60" height="22" rx="11" fill="#8b5a3c"/>
+
+                    <!-- head -->
+                    <circle cx="26" cy="35" r="13" fill="#8b5a3c"/>
+
+                    <!-- ear -->
+                    <ellipse cx="30" cy="40" rx="4" ry="9" fill="#6f4630" transform="rotate(15 30 40)"/>
+
+                    <!-- snout -->
+                    <ellipse cx="14" cy="38" rx="7" ry="5" fill="#a56d4b"/>
+
+                    <!-- nose -->
+                    <circle cx="9" cy="38" r="1.8" fill="#222"/>
+
+                    <!-- eye -->
+                    <circle cx="24" cy="32" r="1.8" fill="#222"/>
+
+                    <!-- legs -->
+                    <rect x="42" y="50" width="5" height="15" rx="2.5" fill="#5b3a29"/>
+                    <rect x="72" y="50" width="5" height="15" rx="2.5" fill="#5b3a29"/>
+                    <rect x="84" y="50" width="5" height="15" rx="2.5" fill="#5b3a29"/>
+
+                    <!-- waving leg -->
+                    <g class="wave-leg">
+                        <rect x="40" y="48" width="5" height="16" rx="2.5" fill="#5b3a29"/>
+                    </g>
+
+                    <!-- speech bubble -->
+                    <g class="speech-bubble">
+                        <!-- bubble -->
+                        <rect x="0" y="2" width="100" height="18" rx="4" fill="#ffffff" stroke="#222" stroke-width="1.5"/>
+                        <!-- tail pointer -->
+                        <path d="M 28 20 L 24 26 L 33 20 Z" fill="#ffffff" stroke="#222" stroke-width="1.5" stroke-linejoin="miter"/>
+                        <!-- text -->
+                        <text x="50" y="14" font-family="Arial, sans-serif" font-size="7.5" fill="#222" text-anchor="middle" font-weight="bold">WOOF WOOF IM FRANS!</text>
+                    </g>
+                </svg>
+            </div>
             <div class="container-lg">
                 <a class="navbar-brand d-flex align-items-center gap-2" href="{{ '/' | relative_url }}">
                     <span class="avatar-wrapper">
