@@ -1,6 +1,6 @@
 :root {
     --bg-color: #f6f2cb;
-    --card-bg: #faf8e8;
+    --card-bg: var(--bg-color);
     --text-color: #33211d;
     --link-color: #a4796d;
     --header-bg: #f6f2cb;
@@ -99,7 +99,7 @@ a {
 }
 
 .card {
-    background: var(--card-bg);
+    background: var(--card-bg) !important;
     border: 0.0625rem solid var(--border-color) !important;
 }
 
