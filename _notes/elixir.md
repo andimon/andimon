@@ -46,7 +46,7 @@ pastizz_irkotta = %Patizz{calories: 2000000, type: "Irkotta"}
 iex> pastizz_irkotta.__struct__
 Pastizz
 ```
-- No `Enumerable` or `Access` protocols — can't use `pastizz[:type]` or `Enum`
+- No `Enumerable` or `Access` protocols - can't use `pastizz[:type]` or `Enum`
 
 ```elixir
 iex> food = %Pastizz{}
