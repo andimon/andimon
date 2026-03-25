@@ -5,7 +5,3 @@ tech: 'Obsidian'
 tags: ['Obsidian', 'notes', 'knowledge', 'productivity', 'pkm', 'writing']
 excerpt: 'Notes for Obsidian.'
 ---
-
-# Obsidian
-
-Add your notes for Obsidian here.

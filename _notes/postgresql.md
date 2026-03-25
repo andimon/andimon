@@ -5,7 +5,3 @@ tech: 'PostgreSQL'
 tags: ['PostgreSQL', 'database', 'sql', 'relational', 'indexing', 'performance']
 excerpt: 'Notes for PostgreSQL.'
 ---
-
-# PostgreSQL
-
-Add your notes for PostgreSQL here.

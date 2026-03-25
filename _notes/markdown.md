@@ -5,7 +5,3 @@ tech: 'Markdown'
 tags: ['Markdown', 'writing', 'docs', 'formatting', 'notes', 'documentation']
 excerpt: 'Notes for Markdown.'
 ---
-
-# Markdown
-
-Add your notes for Markdown here.

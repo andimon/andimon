@@ -5,7 +5,3 @@ tech: 'Grafana'
 tags: ['Grafana', 'dashboards', 'visualization', 'observability', 'monitoring', 'metrics']
 excerpt: 'Notes for Grafana.'
 ---
-
-# Grafana
-
-Add your notes for Grafana here.

@@ -5,7 +5,3 @@ tech: 'Azure'
 tags: ['Azure', 'cloud', 'devops', 'infrastructure', 'services', 'deployment']
 excerpt: 'Notes for Azure.'
 ---
-
-# Azure
-
-Add your notes for Azure here.

@@ -5,7 +5,3 @@ tech: 'LaTeX'
 tags: ['LaTeX', 'typesetting', 'docs', 'math', 'publishing', 'formatting']
 excerpt: 'Notes for LaTeX.'
 ---
-
-# LaTeX
-
-Add your notes for LaTeX here.

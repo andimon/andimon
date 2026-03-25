@@ -5,7 +5,3 @@ tech: 'C++'
 tags: ['C++', 'systems', 'performance', 'memory', 'templates', 'cpp']
 excerpt: 'Notes for C++.'
 ---
-
-# C++
-
-Add your notes for C++ here.

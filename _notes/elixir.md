@@ -5,7 +5,3 @@ tech: 'Elixir'
 tags: ['Elixir', 'beam', 'otp', 'functional', 'backend', 'erlang']
 excerpt: 'Notes for Elixir.'
 ---
-
-# Elixir
-
-Add your notes for Elixir here.

@@ -5,7 +5,3 @@ tech: 'JavaScript'
 tags: ['JavaScript', 'frontend', 'web', 'browser', 'dom', 'language']
 excerpt: 'Notes for JavaScript.'
 ---
-
-# JavaScript
-
-Add your notes for JavaScript here.

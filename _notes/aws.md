@@ -6,6 +6,4 @@ tags: ['AWS', 'cloud', 'devops', 'infrastructure', 'services', 'deployment']
 excerpt: 'Notes for AWS.'
 ---
 
-# AWS
-
 Add your notes for AWS here.

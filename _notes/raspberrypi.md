@@ -5,7 +5,3 @@ tech: 'RaspberryPi'
 tags: ['RaspberryPi', 'hardware', 'linux', 'iot', 'embedded', 'cluster']
 excerpt: 'Notes for RaspberryPi.'
 ---
-
-# RaspberryPi
-
-Add your notes for RaspberryPi here.

@@ -5,7 +5,3 @@ tech: 'FreeCAD'
 tags: ['FreeCAD', 'cad', 'design', '3d', 'modeling', 'engineering']
 excerpt: 'Notes for FreeCAD.'
 ---
-
-# FreeCAD
-
-Add your notes for FreeCAD here.

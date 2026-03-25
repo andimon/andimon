@@ -5,7 +5,3 @@ tech: 'Logstash'
 tags: ['Logstash', 'pipelines', 'logging', 'ingest', 'etl', 'observability']
 excerpt: 'Notes for Logstash.'
 ---
-
-# Logstash
-
-Add your notes for Logstash here.
