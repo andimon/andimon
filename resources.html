@@ -21,7 +21,7 @@ document.addEventListener('DOMContentLoaded', function() {
         .then(data => {
             if (data.tech_resources) {
                 const techContainer = document.getElementById('tech-resources');
-                techContainer.innerHTML = data.tech_resources.map(item => `
+                const techCards = data.tech_resources.map(item => `
                     <div class="col-12 col-md-4">
                         <div class="card border-0 shadow-sm h-100">
                             <div class="card-body">
@@ -42,6 +42,28 @@ document.addEventListener('DOMContentLoaded', function() {
                         </div>
                     </div>
                 `).join('');
+
+                const notesCard = `
+                    <div class="col-12 col-md-4">
+                        <div class="card border-0 shadow-sm h-100">
+                            <div class="card-body">
+                                <h3 class="h6 mb-3 d-flex align-items-center gap-2">
+                                    <i class="fas fa-notes-medical"></i>
+                                    Personal Notes
+                                </h3>
+                                <ul class="list-unstyled mb-0">
+                                    <li class="mb-1">
+                                        <a href="{{ '/notes' | relative_url }}" class="text-decoration-none small">
+                                            <i class="fas fa-arrow-right me-1 small"></i>View all notes
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                `;
+
+                techContainer.innerHTML = techCards + notesCard;
             }
 
             if (data.books) {

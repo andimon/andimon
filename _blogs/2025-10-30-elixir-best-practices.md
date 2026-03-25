@@ -5,9 +5,8 @@ date: 2025-10-30 12:00:00 +0000
 author: "Andre' Vella"
 tags: [elixir]
 excerpt: "Elixir Best Practices"
+toc: true
 ---
-
-# Elixir Best Practices
 
 ## Order listing of module attributes, directives, and macros
 

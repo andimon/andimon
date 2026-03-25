@@ -29,6 +29,9 @@ layout: default
         </header>
 
         <div class="post-body">
+            {% if page.toc %}
+            {% include toc.html %}
+            {% endif %}
             {{ content }}
         </div>
         </div>

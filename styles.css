@@ -230,6 +230,68 @@ html[data-theme="dark"] .avatar {
     background: transparent;
 }
 
+.toc {
+    margin: 1.5rem 0;
+    background: var(--card-bg);
+    border: 0.0625rem solid var(--border-color);
+}
+
+.toc-toggle {
+    background: transparent;
+    border: none;
+    color: var(--text-color);
+    padding: 0;
+    text-align: left;
+}
+
+.toc-toggle:focus-visible {
+    outline: 0.15rem solid rgba(176, 137, 105, 0.45);
+    outline-offset: 0.2rem;
+}
+
+.toc-toggle-icon {
+    transition: transform 0.2s ease;
+}
+
+.toc.toc-collapsed .toc-content {
+    display: none;
+}
+
+.toc.toc-collapsed .toc-toggle-icon {
+    transform: rotate(-90deg);
+}
+
+.toc-title {
+    letter-spacing: 0.08em;
+    color: var(--bs-secondary-color);
+}
+
+.toc-list a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.toc-list a:hover {
+    color: var(--link-color);
+}
+
+.toc-item {
+    margin: 0.25rem 0;
+}
+
+.toc-list .toc-list {
+    margin-top: 0.25rem;
+    padding-left: 1rem;
+}
+
+.toc-level-3 > a {
+    font-size: 0.95rem;
+}
+
+.toc-level-4 > a {
+    font-size: 0.9rem;
+}
+
 .technologies,
 .social-links {
     display: flex;

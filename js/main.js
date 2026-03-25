@@ -97,19 +97,135 @@ function getTechDocUrl(tech) {
     return matchedKey ? techDocs[matchedKey] : '#'; // Default to '#' if no match found
 }
 
+function slugifyHeading(text) {
+    return text
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+}
+
+function buildTableOfContents() {
+    const tocBlocks = document.querySelectorAll('[data-toc]');
+    if (!tocBlocks.length) return;
+
+    tocBlocks.forEach((tocBlock) => {
+        const rootSelector = tocBlock.getAttribute('data-toc-root') || '.post-body';
+        const root = tocBlock.closest(rootSelector) || document.querySelector(rootSelector);
+        const tocContent = tocBlock.querySelector('[data-toc-content]');
+
+        if (!root || !tocContent) return;
+
+        const headings = Array.from(root.querySelectorAll('h2, h3, h4'));
+        if (!headings.length) {
+            tocBlock.classList.add('d-none');
+            return;
+        }
+
+        const usedIds = new Set();
+        const list = document.createElement('ul');
+        list.className = 'toc-list list-unstyled mb-0';
+        let currentList = list;
+        let currentLevel = 2;
+
+        headings.forEach((heading) => {
+            if (!heading.id) {
+                const baseId = slugifyHeading(heading.textContent) || 'section';
+                let uniqueId = baseId;
+                let counter = 2;
+                while (usedIds.has(uniqueId) || document.getElementById(uniqueId)) {
+                    uniqueId = `${baseId}-${counter}`;
+                    counter += 1;
+                }
+                heading.id = uniqueId;
+            }
+
+            usedIds.add(heading.id);
+
+            const level = parseInt(heading.tagName.replace('H', ''), 10);
+
+            if (level > currentLevel) {
+                const nestedList = document.createElement('ul');
+                nestedList.className = 'toc-list list-unstyled';
+                const lastItem = currentList.lastElementChild;
+                if (lastItem) {
+                    lastItem.appendChild(nestedList);
+                    currentList = nestedList;
+                }
+                currentLevel = level;
+            } else if (level < currentLevel) {
+                const climb = currentLevel - level;
+                for (let i = 0; i < climb; i += 1) {
+                    if (currentList.parentElement) {
+                        const parentItem = currentList.parentElement.closest('li');
+                        currentList = parentItem ? parentItem.parentElement : list;
+                    } else {
+                        currentList = list;
+                    }
+                }
+                currentLevel = level;
+            }
+
+            const item = document.createElement('li');
+            item.className = `toc-item toc-level-${level}`;
+
+            const link = document.createElement('a');
+            link.href = `#${heading.id}`;
+            link.textContent = heading.textContent;
+
+            item.appendChild(link);
+            currentList.appendChild(item);
+        });
+
+        tocContent.appendChild(list);
+    });
+}
+
+function setupTocToggles() {
+    const toggles = document.querySelectorAll('[data-toc-toggle]');
+    if (!toggles.length) return;
+
+    toggles.forEach((toggle) => {
+        const tocBlock = toggle.closest('[data-toc]');
+        if (!tocBlock) return;
+
+        toggle.addEventListener('click', () => {
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', String(!isExpanded));
+            tocBlock.classList.toggle('toc-collapsed', isExpanded);
+        });
+    });
+}
+
 // Function to update technologies section
-function updateTechnologies(technologies) {
+function updateTechnologies(technologies, notes) {
     const techContainer = document.getElementById('technologies-list');
     if (!techContainer || !Array.isArray(technologies)) return;
+
+    let noteMap = new Map();
+    if (Array.isArray(notes)) {
+        notes.forEach((note) => {
+            if (note.tech) {
+                noteMap.set(slugifyHeading(note.tech), note);
+            }
+            if (note.title) {
+                noteMap.set(slugifyHeading(note.title.replace(/notes?/gi, '').trim()), note);
+            }
+        });
+    }
     
     techContainer.innerHTML = technologies
         .map(tech => {
             const techName = tech.trim();
-            const docUrl = getTechDocUrl(techName);
+            const note = noteMap.get(slugifyHeading(techName));
+            const docUrl = note ? note.url : getTechDocUrl(techName);
+            const linkTarget = note ? '' : ' target="_blank" rel="noopener noreferrer"';
             const iconClass = getTechIcon(techName);
             
             return `
-                <a href="${docUrl}" target="_blank" rel="noopener noreferrer" class="tech-tag d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill border text-decoration-none">
+                <a href="${docUrl}"${linkTarget} class="tech-tag d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill border text-decoration-none">
                     <i class="${iconClass}"></i>
                     <span>${techName}</span>
                 </a>
@@ -221,6 +337,18 @@ document.addEventListener('DOMContentLoaded', () => {
             if (data.books) {
                 updateBooks(data.books);
             }
+
+            // Load notes list and align with tech stack
+            if (data.technologies) {
+                fetch('notes.json')
+                    .then(response => response.json())
+                    .then(notes => {
+                        updateTechnologies(data.technologies, notes);
+                    })
+                    .catch(error => {
+                        console.error('Error loading notes:', error);
+                    });
+            }
         })
         .catch(error => {
             console.error('Error loading content:', error);
@@ -293,4 +421,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Update on load and resize
     updateDogStoppingPoint();
     window.addEventListener('resize', updateDogStoppingPoint);
+
+    buildTableOfContents();
+    setupTocToggles();
 });

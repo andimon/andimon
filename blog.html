@@ -4,6 +4,8 @@ title: Blog
 ---
 
 <div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+    <label for="blog-search" class="form-label mb-0 fw-semibold">Search:</label>
+    <input id="blog-search" type="search" class="form-control form-control-sm w-auto" placeholder="Search posts" />
     <label for="tag-filter" class="form-label mb-0 fw-semibold">Filter by tag:</label>
     <select id="tag-filter" class="form-select form-select-sm w-auto">
         <option value="all">All</option>
@@ -21,7 +23,7 @@ title: Blog
 {% if site.blogs.size > 0 %}
 <div class="row g-3" id="blog-posts">
     {% for post in site.blogs %}
-    <div class="col-12 blog-post-item" data-tags="{{ post.tags | join: ',' }}">
+    <div class="col-12 blog-post-item" data-tags="{{ post.tags | join: ',' }}" data-title="{{ post.title | escape }}" data-excerpt="{{ post.excerpt | strip_html | escape }}">
         <article class="card h-100 border-0 shadow-sm">
             <div class="card-body">
                 <h3 class="h5 card-title mb-2">
@@ -58,20 +60,25 @@ title: Blog
 document.addEventListener('DOMContentLoaded', function() {
     const filterSelect = document.getElementById('tag-filter');
     const blogPosts = document.querySelectorAll('.blog-post-item');
+    const blogSearch = document.getElementById('blog-search');
 
-    filterSelect.addEventListener('change', function() {
-        const selectedTag = this.value;
+    function applyFilters() {
+        const selectedTag = filterSelect.value;
+        const query = blogSearch.value.trim().toLowerCase();
 
         blogPosts.forEach(post => {
             const postTagsString = post.getAttribute('data-tags');
+            const postTags = postTagsString ? postTagsString.split(',').map(t => t.trim()) : [];
+            const title = (post.getAttribute('data-title') || '').toLowerCase();
+            const excerpt = (post.getAttribute('data-excerpt') || '').toLowerCase();
+            const matchesTag = selectedTag === 'all' || postTags.includes(selectedTag);
+            const matchesQuery = query === '' || title.includes(query) || excerpt.includes(query);
 
-            if (selectedTag === 'all') {
-                post.classList.remove('d-none');
-            } else {
-                const postTags = postTagsString ? postTagsString.split(',').map(t => t.trim()) : [];
-                post.classList.toggle('d-none', !postTags.includes(selectedTag));
-            }
+            post.classList.toggle('d-none', !(matchesTag && matchesQuery));
         });
-    });
+    }
+
+    filterSelect.addEventListener('change', applyFilters);
+    blogSearch.addEventListener('input', applyFilters);
 });
 </script>

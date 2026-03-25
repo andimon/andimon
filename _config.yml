@@ -20,6 +20,9 @@ collections:
   projects:
     output: true
     permalink: /project/:year/:month/:day/:title/
+  notes:
+    output: true
+    permalink: /notes/:name/
 
 # Include files and directories
 include:
@@ -46,6 +49,11 @@ defaults:
       type: "blogs"
     values:
       layout: "blog"
+  - scope:
+      path: ""
+      type: "notes"
+    values:
+      layout: "note"
   - scope:
       path: ""
     values:

@@ -1,0 +1,11 @@
+<nav class="toc card border-0 shadow-sm toc-collapsed" data-toc data-toc-root="{{ include.root | default: '.post-body' }}">
+    <div class="card-body p-3">
+        <button class="toc-toggle btn btn-sm w-100 d-flex align-items-center justify-content-between" type="button" data-toc-toggle aria-expanded="false">
+            <span class="toc-title small text-uppercase fw-semibold">
+                {{ include.title | default: 'On this page' }}
+            </span>
+            <i class="fas fa-chevron-down toc-toggle-icon" aria-hidden="true"></i>
+        </button>
+        <div class="toc-content mt-2" data-toc-content></div>
+    </div>
+</nav>
