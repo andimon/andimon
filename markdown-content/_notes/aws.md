@@ -5,5 +5,3 @@ tech: 'AWS'
 tags: ['AWS', 'cloud', 'devops', 'infrastructure', 'services', 'deployment']
 excerpt: 'Notes for AWS.'
 ---
-
-Add your notes for AWS here.
