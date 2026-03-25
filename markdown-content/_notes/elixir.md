@@ -75,3 +75,38 @@ iex> defmodule Pastizz do
 ** (ArgumentError) the following keys must also be given when building struct Pastizz: [:type]
     expanding struct: Pastizz.__struct__/1
 ```
+
+## Processes
+
+- `spawn/1` - creates isolated process, failures don't propagate
+
+```elixir
+spawn(fn -> 1 + 2 end)
+#PID<0.43.0>
+```
+`spawn/1` returns a PID (process identifier). The spawned process will execute the given function and exit after the function is done:
+
+```elixir
+iex> pid = spawn(fn -> 1 + 2 end)
+#PID<0.44.0>
+iex> Process.alive?(pid)
+false
+```
+
+- the PID of the current process can be retrieved by calling `self/0`:
+
+```elixir
+iex> self()
+#PID<0.1.0>
+iex> Process.alive?(self())
+true
+```
+- `send/2` - non-blocking, drops message in recipient's mailbox
+- `receive/1` - pattern matches mailbox, blocks until match (use `after` for timeout)
+- `spawn_link/1` - links processes, failure in child crashes parent (and vice versa)
+- `Task.start/1` / `Task.start_link/1` - preferred over spawn, returns `{:ok, pid}`, better error reports, supervision-tree compatible
+
+- Processes are the state primitive - loop recursively, hold state in function args
+- `Process.register(pid, :name)` - global name registration for known processes
+- **Prefer abstractions**: `Agent` for state, `GenServer` for generic servers - don't hand-roll `receive` loops in production
+- "Let it crash" - link to supervisors, don't defensive-catch everything

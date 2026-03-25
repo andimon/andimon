@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,9 +11,20 @@
     <link rel="stylesheet" href="{{ '/styles.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/syntax.css' | relative_url }}" id="syntax-light">
     <link rel="stylesheet" href="{{ '/syntax-dark.css' | relative_url }}" id="syntax-dark" disabled>
+    <script>
+        MathJax = {
+            tex: {
+                inlineMath: [['$', '$'], ['\\(', '\\)']],
+                displayMath: [['$$', '$$'], ['\\[', '\\]']]
+            }
+        };
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
+
 <body>
-    <button class="theme-toggle btn btn-sm d-none d-lg-inline-flex" id="theme-toggle" data-theme-toggle aria-label="Toggle dark mode">
+    <button class="theme-toggle btn btn-sm d-none d-lg-inline-flex" id="theme-toggle" data-theme-toggle
+        aria-label="Toggle dark mode">
         <i class="fas fa-moon theme-icon"></i>
     </button>
     <header class="border-bottom site-header sticky-top">
@@ -21,45 +33,49 @@
                 <svg viewBox="0 0 120 80" xmlns="http://www.w3.org/2000/svg" aria-label="moving sausage dog">
                     <!-- tail -->
                     <g class="tail">
-                        <path d="M92 40 Q108 30 104 16" fill="none" stroke="#5b3a29" stroke-width="4" stroke-linecap="round"/>
+                        <path d="M92 40 Q108 30 104 16" fill="none" stroke="#5b3a29" stroke-width="4"
+                            stroke-linecap="round" />
                     </g>
 
                     <!-- body -->
-                    <rect x="34" y="30" width="60" height="22" rx="11" fill="#8b5a3c"/>
+                    <rect x="34" y="30" width="60" height="22" rx="11" fill="#8b5a3c" />
 
                     <!-- head -->
-                    <circle cx="26" cy="35" r="13" fill="#8b5a3c"/>
+                    <circle cx="26" cy="35" r="13" fill="#8b5a3c" />
 
                     <!-- ear -->
-                    <ellipse cx="30" cy="40" rx="4" ry="9" fill="#6f4630" transform="rotate(15 30 40)"/>
+                    <ellipse cx="30" cy="40" rx="4" ry="9" fill="#6f4630" transform="rotate(15 30 40)" />
 
                     <!-- snout -->
-                    <ellipse cx="14" cy="38" rx="7" ry="5" fill="#a56d4b"/>
+                    <ellipse cx="14" cy="38" rx="7" ry="5" fill="#a56d4b" />
 
                     <!-- nose -->
-                    <circle cx="9" cy="38" r="1.8" fill="#222"/>
+                    <circle cx="9" cy="38" r="1.8" fill="#222" />
 
                     <!-- eye -->
-                    <circle cx="24" cy="32" r="1.8" fill="#222"/>
+                    <circle cx="24" cy="32" r="1.8" fill="#222" />
 
                     <!-- legs -->
-                    <rect x="42" y="50" width="5" height="15" rx="2.5" fill="#5b3a29"/>
-                    <rect x="72" y="50" width="5" height="15" rx="2.5" fill="#5b3a29"/>
-                    <rect x="84" y="50" width="5" height="15" rx="2.5" fill="#5b3a29"/>
+                    <rect x="42" y="50" width="5" height="15" rx="2.5" fill="#5b3a29" />
+                    <rect x="72" y="50" width="5" height="15" rx="2.5" fill="#5b3a29" />
+                    <rect x="84" y="50" width="5" height="15" rx="2.5" fill="#5b3a29" />
 
                     <!-- waving leg -->
                     <g class="wave-leg">
-                        <rect x="40" y="48" width="5" height="16" rx="2.5" fill="#5b3a29"/>
+                        <rect x="40" y="48" width="5" height="16" rx="2.5" fill="#5b3a29" />
                     </g>
 
                     <!-- speech bubble -->
                     <g class="speech-bubble">
                         <!-- bubble -->
-                        <rect x="0" y="2" width="100" height="18" rx="4" fill="#ffffff" stroke="#222" stroke-width="1.5"/>
+                        <rect x="0" y="2" width="100" height="18" rx="4" fill="#ffffff" stroke="#222"
+                            stroke-width="1.5" />
                         <!-- tail pointer -->
-                        <path d="M 28 20 L 24 26 L 33 20 Z" fill="#ffffff" stroke="#222" stroke-width="1.5" stroke-linejoin="miter"/>
+                        <path d="M 28 20 L 24 26 L 33 20 Z" fill="#ffffff" stroke="#222" stroke-width="1.5"
+                            stroke-linejoin="miter" />
                         <!-- text -->
-                        <text x="50" y="14" font-family="Arial, sans-serif" font-size="7.5" fill="#222" text-anchor="middle" font-weight="bold">WOOF WOOF IM FRANS!</text>
+                        <text x="50" y="14" font-family="Arial, sans-serif" font-size="7.5" fill="#222"
+                            text-anchor="middle" font-weight="bold">WOOF WOOF IM FRANS!</text>
                     </g>
                 </svg>
             </div>
@@ -70,28 +86,35 @@
                     </span>
                     <span class="fw-semibold">{{ site.title }}</span>
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#site-nav" aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#site-nav"
+                    aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse navbar-desktop-center" id="site-nav">
                     <ul class="navbar-nav mx-lg-auto align-items-lg-center gap-lg-2 pt-2 pt-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Home</a>
+                            <a class="nav-link{% if page.url == '/' %} active{% endif %}"
+                                href="{{ '/' | relative_url }}">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link{% if page.url contains '/project' %} active{% endif %}" href="{{ '/project' | relative_url }}">Projects</a>
+                            <a class="nav-link{% if page.url contains '/project' %} active{% endif %}"
+                                href="{{ '/project' | relative_url }}">Projects</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link{% if page.url contains '/blog' %} active{% endif %}" href="{{ '/blog' | relative_url }}">Blog</a>
+                            <a class="nav-link{% if page.url contains '/blog' %} active{% endif %}"
+                                href="{{ '/blog' | relative_url }}">Blog</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link{% if page.url contains '/notes' %} active{% endif %}" href="{{ '/notes' | relative_url }}">Notes</a>
+                            <a class="nav-link{% if page.url contains '/notes' %} active{% endif %}"
+                                href="{{ '/notes' | relative_url }}">Notes</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link{% if page.url contains '/resources' %} active{% endif %}" href="{{ '/resources' | relative_url }}">Resources</a>
+                            <a class="nav-link{% if page.url contains '/resources' %} active{% endif %}"
+                                href="{{ '/resources' | relative_url }}">Resources</a>
                         </li>
                         <li class="nav-item d-lg-none">
-                            <button class="btn btn-outline-secondary btn-sm mt-2" type="button" data-theme-toggle aria-label="Toggle dark mode">
+                            <button class="btn btn-outline-secondary btn-sm mt-2" type="button" data-theme-toggle
+                                aria-label="Toggle dark mode">
                                 <i class="fas fa-moon theme-icon me-1"></i>
                                 Theme
                             </button>
@@ -138,4 +161,5 @@
         });
     </script>
 </body>
+
 </html>

@@ -1,0 +1,13 @@
+.mermaid {
+    overflow: visible !important;
+}
+
+.mermaid svg {
+    max-width: 100%;
+    height: auto;
+}
+
+.post-body .mermaid {
+    text-align: center;
+    margin: 2rem 0;
+}

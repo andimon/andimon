@@ -1,0 +1,43 @@
+.container-lg {
+    max-width: 90% !important;
+}
+
+.post-content {
+    max-width: 100%;
+    width: 100%;
+}
+
+.post-body {
+    line-height: 1.7;
+}
+
+.post-body h1,
+.post-body h2,
+.post-body h3 {
+    margin-top: 1.75rem;
+    margin-bottom: 0.75rem;
+}
+
+.post-body img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 0.5rem;
+}
+
+.post-body pre {
+    background: var(--code-bg);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    overflow-x: auto;
+}
+
+.post-body code {
+    background: var(--code-bg);
+    padding: 0.1rem 0.35rem;
+    border-radius: 0.25rem;
+}
+
+.post-body pre code {
+    padding: 0;
+    background: transparent;
+}

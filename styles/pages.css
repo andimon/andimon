@@ -1,0 +1,11 @@
+#projects .list-group-item-action {
+    color: var(--text-color);
+    background-color: transparent;
+    border: none !important;
+    padding: 0.5rem 0;
+}
+
+#projects .list-group-item-action:hover {
+    color: var(--link-color);
+    background-color: transparent;
+}
