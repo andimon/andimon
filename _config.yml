@@ -9,9 +9,6 @@ author:
   email: "andimongh@proton.me"
 
 # Build settings
-markdown: kramdown
-kramdown:
-  math_engine: nil
 permalink: /blog/:year/:month/:day/:title/
 
 # Collections
