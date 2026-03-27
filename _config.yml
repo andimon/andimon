@@ -12,6 +12,7 @@ author:
 permalink: /blog/:year/:month/:day/:title/
 
 # Collections
+collections_dir: markdown-content
 collections:
   blogs:
     output: true
