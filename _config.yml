@@ -1,16 +1,5 @@
 title: "Andre' Vella"
 
-description: "Andre Vella is a backend-focused software engineer passionate about solving problems in the simplest way possible."
-url: "https://www.andrevella.dev"
-baseurl: ""
-
-author:
-  name: "Andre' Vella"
-  email: "andimongh@proton.me"
-
-# Build settings
-permalink: /blog/:year/:month/:day/:title/
-
 # Collections
 collections_dir: markdown-content
 collections:
@@ -28,20 +17,8 @@ collections:
 include:
   - content
 
-# Exclude from processing
-exclude:
-  - README.md
-  - Gemfile
-  - Gemfile.lock
-  - node_modules
-  - vendor/bundle/
-  - vendor/cache/
-  - vendor/gems/
-  - vendor/ruby/
-
-plugins:
-  - jekyll-feed
-  - jekyll-seo-tag
+# Build settings
+permalink: /blog/:year/:month/:day/:title/
 
 defaults:
   - scope:
@@ -58,3 +35,34 @@ defaults:
       path: ""
     values:
       layout: "default"
+
+
+description: "Andre Vella is a backend-focused software engineer passionate about solving problems in the simplest way possible."
+url: "https://www.andrevella.dev"
+baseurl: ""
+
+author:
+  name: "Andre' Vella"
+  email: "andimongh@proton.me"
+
+
+
+
+
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+
