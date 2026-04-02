@@ -4,4 +4,4 @@
             ||=|=
 ```
 
-long programming/learning sessions with my dachshund Frans, exploring writing general-use libraries in different languages
+doing/building stuff with my long doggo support
