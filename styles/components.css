@@ -211,3 +211,9 @@ html[data-theme="dark"] .avatar {
 .social-tag i {
     color: var(--link-color);
 }
+
+.tech-icon-custom {
+    width: 1em;
+    height: 1em;
+    object-fit: contain;
+}

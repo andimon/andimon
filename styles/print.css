@@ -1,0 +1,222 @@
+.print-only,
+#cv-projects-print {
+    display: none;
+}
+
+@page {
+    margin: 1.5cm;
+    size: A4;
+}
+
+@media print {
+    /* Show/hide */
+    .no-print { display: none !important; }
+    .print-only { display: block !important; }
+
+    /* Force black & white, Calibri */
+    * {
+        -webkit-print-color-adjust: economy;
+        print-color-adjust: economy;
+        color: black !important;
+        background: white !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        font-family: 'Calibri', 'Candara', 'Optima', sans-serif !important;
+    }
+
+    /* Preserve Font Awesome icon fonts */
+    .fab, .fas, .far, .fal, .fad {
+        font-family: 'Font Awesome 6 Brands', 'Font Awesome 6 Free' !important;
+    }
+
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    /* Hide site chrome and connect section */
+    .site-header,
+    .theme-toggle,
+    .navbar,
+    #info hr,
+    #info .social-links,
+    #info .card-body > h2:nth-of-type(2) {
+        display: none !important;
+    }
+
+    main.container-lg {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* Single-column layout */
+    .row {
+        display: block !important;
+    }
+
+    .col-md-6 {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important;
+        padding: 0 !important;
+    }
+
+    .g-3 { --bs-gutter-x: 0; --bs-gutter-y: 0; }
+
+    /* Cards — invisible */
+    .card {
+        border: none !important;
+        break-inside: avoid;
+        margin-bottom: 0 !important;
+    }
+
+    .card-body {
+        padding: 0 !important;
+    }
+
+    hr {
+        border: none !important;
+        border-top: 1px solid black !important;
+        margin: 0.4rem 0 !important;
+    }
+
+    /* Section headings — LaTeX style */
+    h2.h4 {
+        font-size: 12pt !important;
+        font-weight: bold !important;
+        font-variant: small-caps !important;
+        letter-spacing: 0.05em !important;
+        border-bottom: 1px solid black !important;
+        padding-bottom: 2px !important;
+        margin-top: 1rem !important;
+        margin-bottom: 0.4rem !important;
+        text-transform: none !important;
+    }
+
+    /* Replace "Hey there 👋" with "About Me" */
+    #about .h4 {
+        font-size: 0 !important;
+    }
+
+    #about .h4::before {
+        content: "About Me";
+        font-size: 12pt;
+        font-weight: bold;
+        font-variant: small-caps;
+        letter-spacing: 0.05em;
+    }
+
+    /* About text */
+    #about-content a {
+        text-decoration: underline !important;
+    }
+
+    /* Tech stack — two-column bullet list */
+    .technologies {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 !important;
+    }
+
+    .tech-tag {
+        display: block !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 1px 0 !important;
+        margin: 0 !important;
+        font-size: 10pt !important;
+        text-decoration: none !important;
+    }
+
+    .tech-tag::before {
+        content: "• ";
+    }
+
+    .tech-tag i,
+    .tech-tag img {
+        display: none !important;
+    }
+
+    /* Social links — plain inline list */
+    .social-links {
+        display: block !important;
+    }
+
+    .social-tag {
+        display: inline !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 10pt !important;
+        text-decoration: none !important;
+    }
+
+    .social-tag::after {
+        content: " · ";
+    }
+
+    .social-tag:last-child::after {
+        content: none;
+    }
+
+    .social-tag i {
+        display: none !important;
+    }
+
+    .social-tag span {
+        text-decoration: underline !important;
+    }
+
+    /* Suppress URL annotations from browser */
+    a[href]::after {
+        content: none !important;
+    }
+
+    /* Projects section */
+    #cv-projects-print {
+        display: block !important;
+    }
+
+    .cv-projects {
+        break-inside: avoid;
+    }
+
+    .cv-project-item {
+        margin-bottom: 0.5rem;
+    }
+
+    .cv-project-url,
+    .cv-project-excerpt {
+        padding-left: 1em;
+        font-size: 9pt;
+    }
+
+    /* CV print header — LaTeX title block */
+    .cv-print-header {
+        text-align: center !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .cv-print-header h1 {
+        font-size: 22pt !important;
+        font-weight: bold !important;
+        letter-spacing: 0 !important;
+        margin-bottom: 4px !important;
+        border: none !important;
+    }
+
+    #cv-print-contact {
+        font-size: 10pt !important;
+        margin-bottom: 2px !important;
+    }
+
+    #cv-print-contact a {
+        text-decoration: underline !important;
+        color: black !important;
+    }
+
+    .cv-print-header hr {
+        border-top: 1.5px solid black !important;
+        margin: 0.5rem 0 0 !important;
+    }
+}

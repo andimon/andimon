@@ -77,10 +77,19 @@ function getTechIcon(tech) {
         return techIcons[lowerTech];
     }
     // Try to find partial match (e.g., 'node' should match 'nodejs')
-    const matchedKey = Object.keys(techIcons).find(key => 
+    const matchedKey = Object.keys(techIcons).find(key =>
         lowerTech.includes(key) || key.includes(lowerTech)
     );
     return matchedKey ? techIcons[matchedKey] : 'devicon-code-plain';
+}
+
+// Render an icon — supports custom SVGs (custom:<name>) and standard CSS class icons
+function renderIconHTML(iconValue) {
+    if (iconValue.startsWith('custom:')) {
+        const name = iconValue.slice(7);
+        return `<img src="content/custom-tech-icons/${name}.svg" alt="${name}" class="tech-icon-custom">`;
+    }
+    return `<i class="${iconValue}"></i>`;
 }
 
 // Function to get documentation URL for a technology
@@ -226,7 +235,7 @@ function updateTechnologies(technologies, notes) {
             
             return `
                 <a href="${docUrl}"${linkTarget} class="tech-tag d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill border text-decoration-none">
-                    <i class="${iconClass}"></i>
+                    ${renderIconHTML(iconClass)}
                     <span>${techName}</span>
                 </a>
             `;
@@ -259,48 +268,47 @@ function updateBooks(books) {
     }).join('');
 }
 
+// Map platforms to Font Awesome icon classes
+const socialIconMap = {
+    'github': 'fa-github',
+    'linkedin': 'fa-linkedin',
+    'twitter': 'fa-twitter',
+    'facebook': 'fa-facebook',
+    'instagram': 'fa-instagram',
+    'youtube': 'fa-youtube',
+    'twitch': 'fa-twitch',
+    'discord': 'fa-discord',
+    'stackoverflow': 'fa-stack-overflow',
+    'medium': 'fa-medium',
+    'dev': 'fa-dev',
+    'codepen': 'fa-codepen',
+    'gitlab': 'fa-gitlab',
+    'bitbucket': 'fa-bitbucket',
+    'reddit': 'fa-reddit',
+    'telegram': 'fa-telegram',
+    'slack': 'fa-slack',
+    'email': 'fa-envelope',
+    'website': 'fa-globe',
+    'resume': 'fa-file-pdf'
+};
+
+function getSocialIcon(platform) {
+    const lower = platform.toLowerCase();
+    const match = Object.entries(socialIconMap).find(([key]) =>
+        lower.includes(key) || key.includes(lower)
+    );
+    return match ? match[1] : `fa-${lower}`;
+}
+
 // Function to update social links section
 function updateSocialLinks(socials) {
     const socialsContainer = document.getElementById('social-links');
     if (!socialsContainer || !socials) return;
-    
+
     socialsContainer.innerHTML = Object.entries(socials)
         .map(([platform, url]) => {
-            const platformLower = platform.toLowerCase();
-            let iconClass = 'fa-link'; // default icon
-            
-            // Map platforms to their respective Font Awesome icons
-            const socialIcons = {
-                'github': 'fa-github',
-                'linkedin': 'fa-linkedin',
-                'twitter': 'fa-twitter',
-                'facebook': 'fa-facebook',
-                'instagram': 'fa-instagram',
-                'youtube': 'fa-youtube',
-                'twitch': 'fa-twitch',
-                'discord': 'fa-discord',
-                'stackoverflow': 'fa-stack-overflow',
-                'medium': 'fa-medium',
-                'dev': 'fa-dev',
-                'codepen': 'fa-codepen',
-                'gitlab': 'fa-gitlab',
-                'bitbucket': 'fa-bitbucket',
-                'reddit': 'fa-reddit',
-                'telegram': 'fa-telegram',
-                'slack': 'fa-slack',
-                'email': 'fa-envelope',
-                'website': 'fa-globe',
-                'resume': 'fa-file-pdf'
-            };
-            
-            // Find matching icon or use the platform name as class
-            const matchedIcon = Object.entries(socialIcons).find(([key]) => 
-                platformLower.includes(key) || key.includes(platformLower)
-            );
-            
-            iconClass = matchedIcon ? matchedIcon[1] : `fa-${platformLower}`;
+            const iconClass = getSocialIcon(platform);
             const displayName = platform.charAt(0).toUpperCase() + platform.slice(1);
-            
             return `
                 <a href="${url}" target="_blank" rel="noopener noreferrer" class="social-tag d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill border text-decoration-none">
                     <i class="fab ${iconClass}"></i>
@@ -309,6 +317,7 @@ function updateSocialLinks(socials) {
             `;
         })
         .join('');
+
 }
 
 // Wait for the DOM to be fully loaded
@@ -331,6 +340,16 @@ document.addEventListener('DOMContentLoaded', () => {
             // Update social links
             if (data.socials) {
                 updateSocialLinks(data.socials);
+                const cvContact = document.getElementById('cv-print-contact');
+                if (cvContact) {
+                    cvContact.innerHTML = Object.entries(data.socials)
+                        .map(([platform, url]) => {
+                            const iconClass = getSocialIcon(platform);
+                            const display = url.replace(/^https?:\/\//, '');
+                            return `<span class="cv-contact-item"><i class="fab ${iconClass}"></i> <a href="${url}">${display}</a></span>`;
+                        })
+                        .join('<span class="cv-contact-sep"> &nbsp;·&nbsp; </span>');
+                }
             }
 
             // Update books
@@ -357,6 +376,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 aboutContent.textContent = 'Failed to load content. Please try again later.';
             }
         });
+
+    // Pre-fetch projects for CV print
+    let cachedProjects = [];
+    fetch('projects.json')
+        .then(r => r.json())
+        .then(data => { cachedProjects = data; })
+        .catch(() => {});
+
+    function buildCVProjectsHTML(projects) {
+        if (!projects.length) return '';
+        return `
+            <h2 class="h4">Projects</h2>
+            ${projects.map(p => `
+                <div class="cv-project-item">
+                    <div>• <strong>${p.title}</strong></div>
+                    ${p.git_url ? `<div class="cv-project-url"><a href="${p.git_url}">${p.git_url.replace(/^https?:\/\//, '')}</a></div>` : ''}
+                    ${p.excerpt ? `<div class="cv-project-excerpt">${p.excerpt}</div>` : ''}
+                </div>
+            `).join('')}
+        `;
+    }
+
+    let cvProjectsEl = null;
+
+    function injectCVProjects() {
+        if (cvProjectsEl || !cachedProjects.length) return;
+        cvProjectsEl = document.createElement('div');
+        cvProjectsEl.id = 'cv-projects-print';
+        cvProjectsEl.className = 'cv-projects';
+        cvProjectsEl.innerHTML = buildCVProjectsHTML(cachedProjects);
+        document.querySelector('main').appendChild(cvProjectsEl);
+    }
+
+    function removeCVProjects() {
+        if (cvProjectsEl) {
+            cvProjectsEl.remove();
+            cvProjectsEl = null;
+        }
+    }
+
+    window.addEventListener('beforeprint', injectCVProjects);
+    window.addEventListener('afterprint', removeCVProjects);
 
     // Dark mode toggle functionality
     const themeToggleButtons = document.querySelectorAll('[data-theme-toggle]');

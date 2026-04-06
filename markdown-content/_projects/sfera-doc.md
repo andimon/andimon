@@ -4,7 +4,8 @@ title: "SferaDoc"
 date: 2026-03-06
 author: "Andre' Vella"
 tags: [elixir]
-excerpt: "Sfera Doc"
+git_url: "https://github.com/sfera-lab/sfera-doc"
+excerpt: "PDF generation library for Elixir. Store versioned Liquid templates in your database, render them to PDF."
 ---
 
 

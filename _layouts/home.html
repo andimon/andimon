@@ -1,6 +1,20 @@
 ---
 layout: default
 ---
+
+<!-- Print-only CV header -->
+<div class="print-only cv-print-header mb-4">
+    <h1 class="h2 mb-1">{{ site.title }}</h1>
+    <div id="cv-print-contact" class="text-muted small"></div>
+    <hr>
+</div>
+
+<div class="text-end mb-2 no-print">
+    <button class="btn btn-outline-secondary btn-sm" onclick="window.print()">
+        <i class="fas fa-file-pdf me-1"></i> Download as PDF
+    </button>
+</div>
+
 <div class="row g-3">
     <!-- About (left side) -->
     <div class="col-md-6">
