@@ -10,7 +10,7 @@ doing/building software with my long doggo support
                          )/_
                _.--..---"-,--c_
           \L..'           ._O__)_
-  ,-.     _.+  _  \..--( /           a:f
+  ,-.     _.+  _  \..--( /           I am a fucking gecko
     `\.-''__.-' \ (     \_      
       `'''       `\__   /\
                   ')
