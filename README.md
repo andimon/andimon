@@ -4,14 +4,5 @@
             ||=|=
 ```
 
-doing/building software with my long doggo support
+Doing and building software with my long doggo support.
 
-```
-                         )/_
-               _.--..---"-,--c_
-          \L..'           ._O__)_
-  ,-.     _.+  _  \..--( /           I am a fucking gecko
-    `\.-''__.-' \ (     \_      
-      `'''       `\__   /\
-                  ')
-```
