@@ -2,6 +2,11 @@
     max-width: 90% !important;
 }
 
+.site-footer {
+    font-size: 0.85rem;
+    opacity: 0.75;
+}
+
 .post-content {
     max-width: 100%;
     width: 100%;

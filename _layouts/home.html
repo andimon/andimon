@@ -6,12 +6,13 @@ layout: default
 <div class="print-only cv-print-header mb-4">
     <h1 class="h2 mb-1">{{ site.title }}</h1>
     <div id="cv-print-contact" class="text-muted small"></div>
+    <div class="cv-print-site small"><i class="fas fa-globe me-1"></i><a href="{{ site.url }}">{{ site.url | remove: "https://" | remove: "www." }}</a></div>
     <hr>
 </div>
 
 <div class="text-end mb-2 no-print">
     <button class="btn btn-outline-secondary btn-sm" onclick="window.print()">
-        <i class="fas fa-file-pdf me-1"></i> Download as PDF
+        <i class="fas fa-file-pdf me-0"></i> Download as PDF
     </button>
 </div>
 
@@ -21,7 +22,7 @@ layout: default
         <section id="about" class="h-100">
             <div class="card border-0 shadow-sm h-100">
                 <div class="card-body">
-                    <h2 class="h4 mb-3">Hey there 👋</h2>
+                    <h2 class="h4 mb-3">Hey there <span class="wave-emoji">👋</span></h2>
                     <div id="about-content">Loading...</div>
                 </div>
             </div>
@@ -35,7 +36,7 @@ layout: default
                 <div class="card-body">
 
                     <!-- Technologies -->
-                    <h2 class="h4 mb-3">Tech Stack</h2>
+                    <h2 class="h4 mb-3">Technologies I work/worked with</h2>
                     <div id="technologies-list" class="technologies mb-4">
                         Loading technologies...
                     </div>
@@ -52,4 +53,9 @@ layout: default
             </div>
         </section>
     </div>
+</div>
+
+<!-- Print-only footer -->
+<div class="print-only cv-print-footer">
+    PDF extracted from <a href="{{ site.url }}">{{ site.url | remove: "https://" | remove: "www." }}</a> &nbsp;·&nbsp; <em>Work in progress - this website is still under construction.</em>
 </div>

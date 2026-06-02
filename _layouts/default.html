@@ -126,8 +126,17 @@
         </nav>
     </header>
     <main class="container-lg py-4">
+        <div class="alert alert-warning py-2 px-3 mb-4 small no-print" role="alert">
+            <i class="fas fa-hard-hat me-2"></i><strong>Work in progress</strong> - this website is still under construction. Some sections may be incomplete or change frequently.
+        </div>
         {{ content }}
     </main>
+    <footer class="site-footer border-top mt-4 py-3 no-print">
+        <div class="container-lg d-flex flex-column flex-sm-row align-items-center justify-content-between gap-2 text-muted small">
+            <span>&copy; {{ 'now' | date: "%Y" }} {{ site.title }}</span>
+            <a href="{{ site.url }}" class="text-muted text-decoration-none">{{ site.url | remove: "https://" | remove: "www." }}</a>
+        </div>
+    </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="{{ '/js/main.js' | relative_url }}"></script>
     <script type="module">

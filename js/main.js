@@ -406,7 +406,12 @@ document.addEventListener('DOMContentLoaded', () => {
         cvProjectsEl.id = 'cv-projects-print';
         cvProjectsEl.className = 'cv-projects';
         cvProjectsEl.innerHTML = buildCVProjectsHTML(cachedProjects);
-        document.querySelector('main').appendChild(cvProjectsEl);
+        const footer = document.querySelector('.cv-print-footer');
+        if (footer) {
+            footer.parentNode.insertBefore(cvProjectsEl, footer);
+        } else {
+            document.querySelector('main').appendChild(cvProjectsEl);
+        }
     }
 
     function removeCVProjects() {
