@@ -78,6 +78,7 @@
     "yarn": "devicon-yarn-plain colored",
     "gulp": "devicon-gulp-plain colored",
     "grunt": "devicon-grunt-plain colored",
+    "rabbitmq": "devicon-rabbitmq-original colored",
     "prometheus": "devicon-prometheus-original colored",
     "grafana": "devicon-grafana-plain colored",
     "elasticsearch": "devicon-elasticsearch-plain colored",

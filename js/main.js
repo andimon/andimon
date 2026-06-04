@@ -387,7 +387,7 @@ document.addEventListener('DOMContentLoaded', () => {
     function buildCVProjectsHTML(projects) {
         if (!projects.length) return '';
         return `
-            <h2 class="h4">Projects</h2>
+            <h2 class="h4">Side Projects</h2>
             ${projects.map(p => `
                 <div class="cv-project-item">
                     <div>• <strong>${p.title}</strong></div>
