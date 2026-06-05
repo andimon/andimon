@@ -342,13 +342,14 @@ document.addEventListener('DOMContentLoaded', () => {
                 updateSocialLinks(data.socials);
                 const cvContact = document.getElementById('cv-print-contact');
                 if (cvContact) {
-                    cvContact.innerHTML = Object.entries(data.socials)
+                    const emailItem = `<span class="cv-contact-item"><i class="fas fa-envelope"></i> <a href="mailto:vellaandre@proton.me">vellaandre@proton.me</a></span>`;
+                    const socialItems = Object.entries(data.socials)
                         .map(([platform, url]) => {
                             const iconClass = getSocialIcon(platform);
                             const display = url.replace(/^https?:\/\//, '');
                             return `<span class="cv-contact-item"><i class="fab ${iconClass}"></i> <a href="${url}">${display}</a></span>`;
-                        })
-                        .join('<span class="cv-contact-sep"> &nbsp;·&nbsp; </span>');
+                        });
+                    cvContact.innerHTML = [emailItem, ...socialItems].join('<span class="cv-contact-sep"> &nbsp;·&nbsp; </span>');
                 }
             }
 
