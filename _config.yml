@@ -1,0 +1,68 @@
+title: "Andre' Vella"
+
+# Collections
+collections_dir: markdown-content
+collections:
+  blogs:
+    output: true
+    permalink: /blog/:year/:month/:day/:title/
+  projects:
+    output: true
+    permalink: /project/:year/:month/:day/:title/
+  notes:
+    output: true
+    permalink: /notes/:name/
+
+# Include files and directories
+include:
+  - content
+
+# Build settings
+permalink: /blog/:year/:month/:day/:title/
+
+defaults:
+  - scope:
+      path: ""
+      type: "blogs"
+    values:
+      layout: "blog"
+  - scope:
+      path: ""
+      type: "notes"
+    values:
+      layout: "note"
+  - scope:
+      path: ""
+    values:
+      layout: "default"
+
+
+description: "Andre Vella is a backend-focused software engineer passionate about solving problems in the simplest way possible."
+url: "https://www.andrevella.dev"
+baseurl: ""
+
+author:
+  name: "Andre' Vella"
+  email: "andimongh@proton.me"
+
+
+
+
+
+
+# Exclude from processing
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
+
+

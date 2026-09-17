@@ -1,0 +1,201 @@
+/* ─── Screen: hide print-only elements ─── */
+.print-only,
+#cv-projects-print {
+    display: none;
+}
+
+/* ─── Page setup ─── */
+@page {
+    margin: 1.5cm;
+    size: A4;
+}
+
+@media print {
+
+    /* ─── Visibility ─── */
+    .no-print   { display: none !important; }
+    .print-only { display: block !important; }
+
+    /* ─── Global reset ─── */
+    * {
+        -webkit-print-color-adjust: economy;
+        print-color-adjust: economy;
+        color: black !important;
+        background: white !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+        font-family: 'Calibri', 'Candara', 'Optima', sans-serif !important;
+    }
+
+    .fab, .fas, .far, .fal, .fad {
+        font-family: 'Font Awesome 6 Brands', 'Font Awesome 6 Free' !important;
+    }
+
+    /* ─── Base ─── */
+    body {
+        font-size: 12pt;
+        line-height: 1.5;
+    }
+
+    main.container-lg {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+
+    /* ─── Hide site chrome ─── */
+    .site-header,
+    .theme-toggle,
+    .navbar,
+    #info hr,
+    #info .social-links,
+    #info .card-body > h2:nth-of-type(2) {
+        display: none !important;
+    }
+
+    /* ─── Layout ─── */
+    .row { display: block !important; }
+
+    .col-md-6 {
+        width: 100% !important;
+        max-width: 100% !important;
+        flex: none !important;
+        padding: 0 !important;
+    }
+
+    .g-3 { --bs-gutter-x: 0; --bs-gutter-y: 0; }
+
+    /* ─── Cards ─── */
+    .card {
+        border: none !important;
+        margin-bottom: 0 !important;
+        break-inside: avoid;
+    }
+
+    .card-body { padding: 0 !important; }
+
+    /* ─── Dividers ─── */
+    hr {
+        border: none !important;
+        border-top: 1px solid black !important;
+        margin: 0.4rem 0 !important;
+    }
+
+    /* ─── Section headings (LaTeX style) ─── */
+    h2.h4 {
+        font-size: 12pt !important;
+        font-weight: bold !important;
+        font-variant: small-caps !important;
+        letter-spacing: 0.05em !important;
+        text-transform: none !important;
+        border-bottom: 1px solid black !important;
+        padding-bottom: 2px !important;
+        margin-top: 1rem !important;
+        margin-bottom: 0.4rem !important;
+    }
+
+    /* Replace "Hey there 👋" with "About Me" */
+    #about .h4 { font-size: 0 !important; }
+
+    #about .h4::before {
+        content: "About Me";
+        font-size: 12pt;
+        font-weight: bold;
+        font-variant: small-caps;
+        letter-spacing: 0.05em;
+    }
+
+    /* ─── Links ─── */
+    a[href] { text-decoration: underline !important; }
+    a[href]::after { content: none !important; }
+
+    /* ─── Tech stack ─── */
+    .technologies {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 0 !important;
+    }
+
+    .tech-tag {
+        display: block !important;
+        border: none !important;
+        border-radius: 0 !important;
+        padding: 1px 0 !important;
+        margin: 0 !important;
+        font-size: 10pt !important;
+        text-decoration: none !important;
+    }
+
+    .tech-tag::before { content: "• "; }
+
+    .tech-tag i,
+    .tech-tag img { display: none !important; }
+
+    /* ─── Social links ─── */
+    .social-tag {
+        display: inline !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        font-size: 10pt !important;
+    }
+
+    .social-tag::after { content: " · "; }
+    .social-tag:last-child::after { content: none; }
+    .social-tag i { display: none !important; }
+
+    /* ─── Projects ─── */
+    #cv-projects-print { display: block !important; }
+    .cv-projects { break-inside: avoid; }
+    .cv-project-item { margin-bottom: 0.5rem; }
+
+    .cv-project-url,
+    .cv-project-excerpt {
+        padding-left: 1em;
+        font-size: 9pt;
+    }
+
+    /* ─── CV print header ─── */
+    .cv-print-header {
+        text-align: center !important;
+        margin-bottom: 0.5rem !important;
+    }
+
+    .cv-print-header h1 {
+        font-size: 22pt !important;
+        font-weight: bold !important;
+        letter-spacing: 0 !important;
+        margin-bottom: 4px !important;
+        border: none !important;
+    }
+
+    .cv-print-header hr {
+        border-top: 1.5px solid black !important;
+        margin: 0.5rem 0 0 !important;
+    }
+
+    /* ─── CV print contact ─── */
+    #cv-print-contact {
+        font-size: 10pt !important;
+        margin-bottom: 2px !important;
+    }
+
+    /* ─── CV print footer ─── */
+    .cv-print-footer {
+        display: block !important;
+        text-align: center !important;
+        font-size: 8pt !important;
+        color: #555 !important;
+        border-top: 1px solid #ccc !important;
+        padding-top: 0.4rem !important;
+        margin-top: 2rem !important;
+    }
+
+    .cv-print-footer a { color: #555 !important; }
+
+    /* ─── CV print site ─── */
+    .cv-print-site {
+        font-size: 10pt !important;
+        margin-top: 2px !important;
+    }
+
+}

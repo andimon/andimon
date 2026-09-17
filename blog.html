@@ -1,0 +1,84 @@
+---
+layout: default
+title: Blog
+---
+
+<div class="d-flex flex-wrap align-items-center gap-2 mb-3">
+    <label for="blog-search" class="form-label mb-0 fw-semibold">Search:</label>
+    <input id="blog-search" type="search" class="form-control form-control-sm w-auto" placeholder="Search posts" />
+    <label for="tag-filter" class="form-label mb-0 fw-semibold">Filter by tag:</label>
+    <select id="tag-filter" class="form-select form-select-sm w-auto">
+        <option value="all">All</option>
+        {% assign all_tags = site.blogs | map: 'tags' | join: ',' | split: ',' | uniq | sort %}
+        {% for tag in all_tags %}
+            {% if tag != "" %}
+            <option value="{{ tag }}">{{ tag }}</option>
+            {% endif %}
+        {% endfor %}
+    </select>
+</div>
+
+<h2 class="h4 mb-3">Blog Posts</h2>
+
+{% if site.blogs.size > 0 %}
+<div class="row g-3" id="blog-posts">
+    {% for post in site.blogs %}
+    <div class="col-12 blog-post-item" data-tags="{{ post.tags | join: ',' }}" data-title="{{ post.title | escape }}" data-excerpt="{{ post.excerpt | strip_html | escape }}">
+        <article class="card h-100 border-0 shadow-sm">
+            <div class="card-body">
+                <h3 class="h5 card-title mb-2">
+                    <a class="text-decoration-none stretched-link" href="{{ post.url | relative_url }}">{{ post.title }}</a>
+                </h3>
+                <div class="small text-body-secondary mb-3">
+                    <time datetime="{{ post.date | date_to_xmlschema }}">
+                        {{ post.date | date: "%B %d, %Y" }}
+                    </time>
+                    {% if post.author %}
+                    <span> • {{ post.author }}</span>
+                    {% endif %}
+                </div>
+                {% if post.excerpt %}
+                <p class="card-text mb-3">{{ post.excerpt | strip_html | truncatewords: 50 }}</p>
+                {% endif %}
+                {% if post.tags %}
+                <div class="d-flex flex-wrap gap-2">
+                    {% for tag in post.tags %}
+                    <span class="badge rounded-pill text-bg-secondary">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </article>
+    </div>
+    {% endfor %}
+</div>
+{% else %}
+<div class="alert alert-secondary">No blog posts yet. Check back soon.</div>
+{% endif %}
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const filterSelect = document.getElementById('tag-filter');
+    const blogPosts = document.querySelectorAll('.blog-post-item');
+    const blogSearch = document.getElementById('blog-search');
+
+    function applyFilters() {
+        const selectedTag = filterSelect.value;
+        const query = blogSearch.value.trim().toLowerCase();
+
+        blogPosts.forEach(post => {
+            const postTagsString = post.getAttribute('data-tags');
+            const postTags = postTagsString ? postTagsString.split(',').map(t => t.trim()) : [];
+            const title = (post.getAttribute('data-title') || '').toLowerCase();
+            const excerpt = (post.getAttribute('data-excerpt') || '').toLowerCase();
+            const matchesTag = selectedTag === 'all' || postTags.includes(selectedTag);
+            const matchesQuery = query === '' || title.includes(query) || excerpt.includes(query);
+
+            post.classList.toggle('d-none', !(matchesTag && matchesQuery));
+        });
+    }
+
+    filterSelect.addEventListener('change', applyFilters);
+    blogSearch.addEventListener('input', applyFilters);
+});
+</script>

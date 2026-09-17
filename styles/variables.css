@@ -1,0 +1,35 @@
+:root {
+    --bg-color: #f6f2cb;
+    --card-bg: var(--bg-color);
+    --text-color: #33211d;
+    --link-color: #a4796d;
+    --header-bg: #f6f2cb;
+    --tag-bg: rgba(176, 137, 105, 0.15);
+    --tag-hover-shadow: rgba(51, 33, 29, 0.15);
+    --code-bg: rgba(176, 137, 105, 0.1);
+    --border-color: #b08969;
+    --bs-body-bg: var(--bg-color);
+    --bs-body-color: var(--text-color);
+    --bs-secondary-color: #b08969;
+    --bs-tertiary-color: #a4796d;
+    --bs-border-color: var(--border-color);
+    --bs-card-bg: var(--card-bg);
+}
+
+[data-theme="dark"] {
+    --bg-color: #33211d;
+    --card-bg: #3e2820;
+    --text-color: #f6f2cb;
+    --link-color: #cc915c;
+    --header-bg: #3e2820;
+    --tag-bg: rgba(164, 121, 109, 0.2);
+    --tag-hover-shadow: rgba(246, 242, 203, 0.1);
+    --code-bg: #3e2820;
+    --border-color: #a4796d;
+    --bs-body-bg: var(--bg-color);
+    --bs-body-color: var(--text-color);
+    --bs-secondary-color: #b08969;
+    --bs-tertiary-color: #a4796d;
+    --bs-border-color: var(--border-color);
+    --bs-card-bg: var(--card-bg);
+}

@@ -1,0 +1,206 @@
+{
+  "about": "I'm Andre' Vella, a backend-focused Software Engineer trying to think about how we can build simple, effective solutions to real-world problems. I currently work at <a href='https://yolo.com/' target='_blank' rel='noopener noreferrer'>Yolo Group</a> (Hub88), where I work on the core platform that aggregates operators and suppliers, streamlining integrations and enabling scalable content distribution across the iGaming ecosystem. Previously, I contributed to various parts of a crypto payments platform, helping integrating foundational components such as self-custodial wallets, etc.<br><br>I also served as a part-time Research Support Officer on the <a href='https://www.knowledgefabric.io/' target='_blank' rel='noopener noreferrer'>Knowledge Fabric</a> project at the University of Malta, a platform that helps organisations identify and mitigate workforce continuity risks by measuring successor coverage and detecting key-person dependencies. My main development focus there was <strong>ASP.NET MVC</strong>, contributing to the web application layer that surfaces workforce insights, expertise profiles, and risk registers.<br><br>Outside of work, I enjoy 3D printing, spending time with animals, and experimenting with new technologies.",
+    "technologies": [
+        "Elixir",
+        ".NET",
+        "Python",
+        "JavaScript",
+        "PostgreSQL",
+        "RabbitMQ",
+        "GraphQL",
+        "Azure",
+        "AWS",
+        "Prometheus",
+        "Grafana",
+        "Elasticsearch",
+        "Logstash",
+        "Kibana",
+        "RaspberryPi",
+        "3D Printing",
+        "FreeCAD",
+        "Blender",
+        "LaTeX",
+        "Markdown",
+        "Obsidian",
+        "Alacritty"
+    ],
+    "socials": {
+        "github": "https://github.com/andimon",
+        "linkedin": "https://linkedin.com/in/vellaandre"
+    },
+    "tech_resources": [
+        {
+            "technology": "Elixir",
+            "icon": "devicon-elixir-plain",
+            "resources": [
+                {
+                    "name": "Official Docs",
+                    "link": "https://elixir-lang.org/docs.html"
+                },
+                {
+                    "name": "Getting Started",
+                    "link": "https://elixir-lang.org/getting-started/introduction.html"
+                },
+                {
+                    "name": "Elixir School",
+                    "link": "https://elixirschool.com/"
+                },
+                {
+                    "name": "HexDocs",
+                    "link": "https://hexdocs.pm/"
+                }
+            ]
+        },
+        {
+            "technology": ".NET",
+            "icon": "devicon-dot-net-plain",
+            "resources": [
+                {
+                    "name": "Official Docs",
+                    "link": "https://docs.microsoft.com/en-us/dotnet/"
+                },
+                {
+                    "name": "C# Docs",
+                    "link": "https://docs.microsoft.com/en-us/dotnet/csharp/"
+                },
+                {
+                    "name": ".NET Learn",
+                    "link": "https://dotnet.microsoft.com/en-us/learn"
+                },
+                {
+                    "name": "NuGet",
+                    "link": "https://www.nuget.org/"
+                }
+            ]
+        },
+        {
+            "technology": "Python",
+            "icon": "devicon-python-plain",
+            "resources": [
+                {
+                    "name": "Official Docs",
+                    "link": "https://docs.python.org/3/"
+                },
+                {
+                    "name": "Official Tutorial",
+                    "link": "https://docs.python.org/3/tutorial/"
+                },
+                {
+                    "name": "Real Python",
+                    "link": "https://realpython.com/"
+                },
+                {
+                    "name": "PyPI",
+                    "link": "https://pypi.org/"
+                }
+            ]
+        },
+        {
+            "technology": "RaspberryPi",
+            "icon": "devicon-raspberrypi-plain",
+            "resources": [
+                {
+                    "name": "Official Docs",
+                    "link": "https://www.raspberrypi.org/documentation/"
+                },
+                {
+                    "name": "Cluster Tutorial",
+                    "link": "https://www.raspberrypi.com/tutorials/cluster-raspberry-pi-tutorial/"
+                }
+            ]
+        }
+    ],
+    "books": [
+        {
+            "title": "Think Python",
+            "author": "Allen B. Downey",
+            "link": "https://greenteapress.com/wp/think-python-3rd-edition/",
+            "total_pages": 345,
+            "pages_read": 20
+        },
+        {
+            "title": "The C Programming Language",
+            "author": "Brian W. Kernighan & Dennis M. Ritchie",
+            "link": "https://www.amazon.com/Programming-Language-2nd-Brian-Kernighan/dp/0131103628",
+            "total_pages": 272,
+            "pages_read": 0
+        },
+        {
+            "title": "C Primer Plus",
+            "author": "Stephen Prata",
+            "link": "https://www.amazon.com/Primer-Plus-6th-Developers-Library/dp/0321928423",
+            "total_pages": 1080,
+            "pages_read": 0
+        },
+        {
+            "title": "The C++ Programming Language",
+            "author": "Bjarne Stroustrup",
+            "link": "https://www.stroustrup.com/4th.html",
+            "total_pages": 1376,
+            "pages_read": 0
+        },
+        {
+            "title": "Functional Programming in C++",
+            "author": "Ivan Čukić",
+            "link": "https://www.manning.com/books/functional-programming-in-c-plus-plus",
+            "total_pages": 320,
+            "pages_read": 0
+        },
+        {
+            "title": "Haskell: The Craft of Functional Programming",
+            "author": "Simon Thompson",
+            "link": "https://www.haskellcraft.com/",
+            "total_pages": 608,
+            "pages_read": 0
+        },
+        {
+            "title": "Introduction to Algorithms",
+            "author": "Cormen, Leiserson, Rivest & Stein",
+            "link": "https://mitpress.mit.edu/9780262046305/introduction-to-algorithms/",
+            "total_pages": 1312,
+            "pages_read": 0
+        },
+        {
+            "title": "Fundamentals of Database Systems",
+            "author": "Ramez Elmasri & Shamkant B. Navathe",
+            "link": "https://www.pearson.com/en-us/subject-catalog/p/fundamentals-of-database-systems/P200000003546",
+            "total_pages": 1280,
+            "pages_read": 0
+        },
+        {
+            "title": "Programming Elixir 1.6",
+            "author": "Dave Thomas",
+            "link": "https://pragprog.com/titles/elixir16/programming-elixir-1-6/",
+            "total_pages": 364,
+            "pages_read": 0
+        },
+        {
+            "title": "Elixir in Action",
+            "author": "Saša Jurić",
+            "link": "https://www.manning.com/books/elixir-in-action-third-edition",
+            "total_pages": 560,
+            "pages_read": 0
+        },
+        {
+            "title": "Programming Phoenix 1.4",
+            "author": "Chris McCord, Bruce Tate & José Valim",
+            "link": "https://pragprog.com/titles/phoenix14/programming-phoenix-1-4/",
+            "total_pages": 318,
+            "pages_read": 0
+        },
+        {
+            "title": "Programming Phoenix LiveView",
+            "author": "Bruce Tate & Sophie DeBenedetto",
+            "link": "https://pragprog.com/titles/liveview/programming-phoenix-liveview/",
+            "total_pages": 396,
+            "pages_read": 0
+        },
+        {
+            "title": "Build a Large Language Model (From Scratch)",
+            "author": "Sebastian Raschka",
+            "link": "https://www.manning.com/books/build-a-large-language-model-from-scratch",
+            "total_pages": 368,
+            "pages_read": 0
+        }
+    ]
+}

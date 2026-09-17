@@ -1,0 +1,39 @@
+---
+layout: default
+---
+
+<div class="post-content mx-auto">
+    <a href="{{ '/notes' | relative_url }}" class="btn btn-outline-secondary btn-sm mb-3">
+        <i class="fas fa-arrow-left"></i> See all notes
+    </a>
+
+    <article class="post card border-0 shadow-sm">
+        <div class="card-body p-4 p-md-5">
+        <header class="post-header">
+            <h1 class="post-title h2 mb-2">{{ page.title }}</h1>
+            <div class="post-meta small mb-3">
+                <time datetime="{{ page.date | date_to_xmlschema }}">
+                    {{ page.date | date: "%B %d, %Y" }}
+                </time>
+                {% if page.author %}
+                <span> • {{ page.author }}</span>
+                {% endif %}
+                {% if page.tags %}
+                <div class="mt-2 d-flex flex-wrap gap-2">
+                    {% for tag in page.tags %}
+                    <span class="badge rounded-pill text-bg-secondary">{{ tag }}</span>
+                    {% endfor %}
+                </div>
+                {% endif %}
+            </div>
+        </header>
+
+        <div class="post-body">
+            {% if page.toc %}
+            {% include toc.html %}
+            {% endif %}
+            {{ content }}
+        </div>
+        </div>
+    </article>
+</div>

@@ -1,0 +1,494 @@
+// Icons mapping for technologies using devicon
+
+let techIcons = {};
+
+// Documentation URLs for technologies
+const techDocs = {
+    'elixir': 'https://elixir-lang.org/docs.html',
+    'postgresql': 'https://www.postgresql.org/docs/',
+    '.net': 'https://docs.microsoft.com/en-us/dotnet/',
+    'javascript': 'https://developer.mozilla.org/en-US/docs/Web/JavaScript',
+    'typescript': 'https://www.typescriptlang.org/docs/',
+    'react': 'https://reactjs.org/docs/getting-started.html',
+    'node': 'https://nodejs.org/en/docs/',
+    'python': 'https://docs.python.org/3/',
+    'docker': 'https://docs.docker.com/',
+    'aws': 'https://docs.aws.amazon.com/',
+    'git': 'https://git-scm.com/doc',
+    'html': 'https://developer.mozilla.org/en-US/docs/Web/HTML',
+    'css': 'https://developer.mozilla.org/en-US/docs/Web/CSS',
+    'sass': 'https://sass-lang.com/documentation',
+    'graphql': 'https://graphql.org/learn/',
+    'mongodb': 'https://docs.mongodb.com/',
+    'mysql': 'https://dev.mysql.com/doc/',
+    'redis': 'https://redis.io/documentation',
+    'linux': 'https://www.kernel.org/doc/html/latest/',
+    'bash': 'https://www.gnu.org/software/bash/manual/',
+    'java': 'https://docs.oracle.com/en/java/',
+    'php': 'https://www.php.net/docs.php',
+    'ruby': 'https://www.ruby-lang.org/en/documentation/',
+    'go': 'https://golang.org/doc/',
+    'rust': 'https://doc.rust-lang.org/book/',
+    'swift': 'https://developer.apple.com/documentation/swift',
+    'kotlin': 'https://kotlinlang.org/docs/home.html',
+    'angular': 'https://angular.io/docs',
+    'vue': 'https://vuejs.org/guide/introduction.html',
+    'svelte': 'https://svelte.dev/docs',
+    'nextjs': 'https://nextjs.org/docs',
+    'nuxt': 'https://nuxtjs.org/docs',
+    'gatsby': 'https://www.gatsbyjs.com/docs/',
+    'jest': 'https://jestjs.io/docs/getting-started',
+    'mocha': 'https://mochajs.org/',
+    'nginx': 'https://nginx.org/en/docs/',
+    'kubernetes': 'https://kubernetes.io/docs/home/',
+    'docker': 'https://docs.docker.com/',
+    'c++': 'https://en.cppreference.com/w/',
+    'prometheus': 'https://prometheus.io/docs/introduction/overview/',
+    'grafana': 'https://grafana.com/docs/',
+    'elasticsearch': 'https://www.elastic.co/guide/en/elasticsearch/reference/current/index.html',
+    'logstash': 'https://www.elastic.co/guide/en/logstash/current/index.html',
+    'kibana': 'https://www.elastic.co/guide/en/kibana/current/index.html',
+    'raspberrypi': 'https://www.raspberrypi.org/documentation/',
+    'latex': 'https://www.latex-project.org/help/documentation/',
+    'blender': 'https://docs.blender.org/',
+    'markdown': 'https://www.markdownguide.org/getting-started/',
+    'obsidian': 'https://help.obsidian.md/',
+    'freecad': 'https://wiki.freecad.org/',
+    '3d printing': 'https://en.wikipedia.org/wiki/3D_printing',
+    'azure': 'https://learn.microsoft.com/azure/',
+    'aws': 'https://docs.aws.amazon.com/'
+    // Add more as needed
+};
+
+// Load the JSON file first
+fetch('content/tech-icons.json')
+    .then(response => response.json())
+    .then(data => {
+        techIcons = data;
+        // Call any functions that need techIcons here
+    })
+    .catch(error => console.error('Error loading tech icons:', error));
+
+// Function to get the appropriate icon class for a technology
+function getTechIcon(tech) {
+    const lowerTech = tech.toLowerCase();
+    // Try to find exact match first
+    if (techIcons[lowerTech]) {
+        return techIcons[lowerTech];
+    }
+    // Try to find partial match (e.g., 'node' should match 'nodejs')
+    const matchedKey = Object.keys(techIcons).find(key =>
+        lowerTech.includes(key) || key.includes(lowerTech)
+    );
+    return matchedKey ? techIcons[matchedKey] : 'devicon-code-plain';
+}
+
+// Render an icon — supports custom SVGs (custom:<name>) and standard CSS class icons
+function renderIconHTML(iconValue) {
+    if (iconValue.startsWith('custom:')) {
+        const name = iconValue.slice(7);
+        return `<img src="content/custom_tech_icons/${name}.svg" alt="${name}" class="tech-icon-custom">`;
+    }
+    return `<i class="${iconValue}"></i>`;
+}
+
+// Function to get documentation URL for a technology
+function getTechDocUrl(tech) {
+    const lowerTech = tech.toLowerCase();
+    // Try to find exact match first
+    if (techDocs[lowerTech]) {
+        return techDocs[lowerTech];
+    }
+    // Try to find partial match
+    const matchedKey = Object.keys(techDocs).find(key => 
+        lowerTech.includes(key) || key.includes(lowerTech)
+    );
+    return matchedKey ? techDocs[matchedKey] : '#'; // Default to '#' if no match found
+}
+
+function slugifyHeading(text) {
+    return text
+        .toLowerCase()
+        .trim()
+        .replace(/[^a-z0-9\s-]/g, '')
+        .replace(/\s+/g, '-')
+        .replace(/-+/g, '-')
+        .replace(/^-|-$/g, '');
+}
+
+function buildTableOfContents() {
+    const tocBlocks = document.querySelectorAll('[data-toc]');
+    if (!tocBlocks.length) return;
+
+    tocBlocks.forEach((tocBlock) => {
+        const rootSelector = tocBlock.getAttribute('data-toc-root') || '.post-body';
+        const root = tocBlock.closest(rootSelector) || document.querySelector(rootSelector);
+        const tocContent = tocBlock.querySelector('[data-toc-content]');
+
+        if (!root || !tocContent) return;
+
+        const headings = Array.from(root.querySelectorAll('h2, h3, h4'));
+        if (!headings.length) {
+            tocBlock.classList.add('d-none');
+            return;
+        }
+
+        const usedIds = new Set();
+        const list = document.createElement('ul');
+        list.className = 'toc-list list-unstyled mb-0';
+        let currentList = list;
+        let currentLevel = 2;
+
+        headings.forEach((heading) => {
+            if (!heading.id) {
+                const baseId = slugifyHeading(heading.textContent) || 'section';
+                let uniqueId = baseId;
+                let counter = 2;
+                while (usedIds.has(uniqueId) || document.getElementById(uniqueId)) {
+                    uniqueId = `${baseId}-${counter}`;
+                    counter += 1;
+                }
+                heading.id = uniqueId;
+            }
+
+            usedIds.add(heading.id);
+
+            const level = parseInt(heading.tagName.replace('H', ''), 10);
+
+            if (level > currentLevel) {
+                const nestedList = document.createElement('ul');
+                nestedList.className = 'toc-list list-unstyled';
+                const lastItem = currentList.lastElementChild;
+                if (lastItem) {
+                    lastItem.appendChild(nestedList);
+                    currentList = nestedList;
+                }
+                currentLevel = level;
+            } else if (level < currentLevel) {
+                const climb = currentLevel - level;
+                for (let i = 0; i < climb; i += 1) {
+                    if (currentList.parentElement) {
+                        const parentItem = currentList.parentElement.closest('li');
+                        currentList = parentItem ? parentItem.parentElement : list;
+                    } else {
+                        currentList = list;
+                    }
+                }
+                currentLevel = level;
+            }
+
+            const item = document.createElement('li');
+            item.className = `toc-item toc-level-${level}`;
+
+            const link = document.createElement('a');
+            link.href = `#${heading.id}`;
+            link.textContent = heading.textContent;
+
+            item.appendChild(link);
+            currentList.appendChild(item);
+        });
+
+        tocContent.appendChild(list);
+    });
+}
+
+function setupTocToggles() {
+    const toggles = document.querySelectorAll('[data-toc-toggle]');
+    if (!toggles.length) return;
+
+    toggles.forEach((toggle) => {
+        const tocBlock = toggle.closest('[data-toc]');
+        if (!tocBlock) return;
+
+        toggle.addEventListener('click', () => {
+            const isExpanded = toggle.getAttribute('aria-expanded') === 'true';
+            toggle.setAttribute('aria-expanded', String(!isExpanded));
+            tocBlock.classList.toggle('toc-collapsed', isExpanded);
+        });
+    });
+}
+
+// Function to update technologies section
+function updateTechnologies(technologies, notes) {
+    const techContainer = document.getElementById('technologies-list');
+    if (!techContainer || !Array.isArray(technologies)) return;
+
+    let noteMap = new Map();
+    if (Array.isArray(notes)) {
+        notes.forEach((note) => {
+            if (note.tech) {
+                noteMap.set(slugifyHeading(note.tech), note);
+            }
+            if (note.title) {
+                noteMap.set(slugifyHeading(note.title.replace(/notes?/gi, '').trim()), note);
+            }
+        });
+    }
+    
+    techContainer.innerHTML = technologies
+        .map(tech => {
+            const techName = tech.trim();
+            const note = noteMap.get(slugifyHeading(techName));
+            const docUrl = note ? note.url : getTechDocUrl(techName);
+            const linkTarget = note ? '' : ' target="_blank" rel="noopener noreferrer"';
+            const iconClass = getTechIcon(techName);
+            
+            return `
+                <a href="${docUrl}"${linkTarget} class="tech-tag d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill border text-decoration-none">
+                    ${renderIconHTML(iconClass)}
+                    <span>${techName}</span>
+                </a>
+            `;
+        })
+        .join('');
+}
+
+// Function to update books section
+function updateBooks(books) {
+    const booksContainer = document.getElementById('books-list');
+    if (!booksContainer || !Array.isArray(books)) return;
+
+    booksContainer.innerHTML = books.map(book => {
+        const percent = Math.round((book.pages_read / book.total_pages) * 100);
+        return `
+            <div class="mb-3">
+                <div class="d-flex justify-content-between align-items-start mb-1">
+                    <div>
+                        <a href="${book.link}" target="_blank" rel="noopener noreferrer" class="fw-semibold text-decoration-none">${book.title}</a>
+                        <span class="text-muted ms-2 small">by ${book.author}</span>
+                    </div>
+                    <span class="small text-muted ms-3 text-nowrap">${percent}%</span>
+                </div>
+                <div class="progress">
+                    <div class="progress-bar" role="progressbar" style="width: ${percent}%;" aria-valuenow="${percent}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+                <div class="small text-muted mt-1">${book.pages_read} / ${book.total_pages} pages</div>
+            </div>
+        `;
+    }).join('');
+}
+
+// Map platforms to Font Awesome icon classes
+const socialIconMap = {
+    'github': 'fa-github',
+    'linkedin': 'fa-linkedin',
+    'twitter': 'fa-twitter',
+    'facebook': 'fa-facebook',
+    'instagram': 'fa-instagram',
+    'youtube': 'fa-youtube',
+    'twitch': 'fa-twitch',
+    'discord': 'fa-discord',
+    'stackoverflow': 'fa-stack-overflow',
+    'medium': 'fa-medium',
+    'dev': 'fa-dev',
+    'codepen': 'fa-codepen',
+    'gitlab': 'fa-gitlab',
+    'bitbucket': 'fa-bitbucket',
+    'reddit': 'fa-reddit',
+    'telegram': 'fa-telegram',
+    'slack': 'fa-slack',
+    'email': 'fa-envelope',
+    'website': 'fa-globe',
+    'resume': 'fa-file-pdf'
+};
+
+function getSocialIcon(platform) {
+    const lower = platform.toLowerCase();
+    const match = Object.entries(socialIconMap).find(([key]) =>
+        lower.includes(key) || key.includes(lower)
+    );
+    return match ? match[1] : `fa-${lower}`;
+}
+
+// Function to update social links section
+function updateSocialLinks(socials) {
+    const socialsContainer = document.getElementById('social-links');
+    if (!socialsContainer || !socials) return;
+
+    socialsContainer.innerHTML = Object.entries(socials)
+        .map(([platform, url]) => {
+            const iconClass = getSocialIcon(platform);
+            const displayName = platform.charAt(0).toUpperCase() + platform.slice(1);
+            return `
+                <a href="${url}" target="_blank" rel="noopener noreferrer" class="social-tag d-inline-flex align-items-center gap-2 px-3 py-1 rounded-pill border text-decoration-none">
+                    <i class="fab ${iconClass}"></i>
+                    <span>${displayName}</span>
+                </a>
+            `;
+        })
+        .join('');
+
+}
+
+// Wait for the DOM to be fully loaded
+document.addEventListener('DOMContentLoaded', () => {
+    // Fetch and display content from data.json
+    fetch('content/data.json')
+        .then(response => response.json())
+        .then(data => {
+            // Update about section - using innerHTML to render HTML tags
+            const aboutContent = document.getElementById('about-content');
+            if (aboutContent) {
+                aboutContent.innerHTML = data.about;
+            }
+            
+            // Update technologies using the separate function
+            if (data.technologies) {
+                updateTechnologies(data.technologies);
+            }
+            
+            // Update social links
+            if (data.socials) {
+                updateSocialLinks(data.socials);
+                const cvContact = document.getElementById('cv-print-contact');
+                if (cvContact) {
+                    const emailItem = `<span class="cv-contact-item"><i class="fas fa-envelope"></i> <a href="mailto:vellaandre@proton.me">vellaandre@proton.me</a></span>`;
+                    const socialItems = Object.entries(data.socials)
+                        .map(([platform, url]) => {
+                            const iconClass = getSocialIcon(platform);
+                            const display = url.replace(/^https?:\/\//, '');
+                            return `<span class="cv-contact-item"><i class="fab ${iconClass}"></i> <a href="${url}">${display}</a></span>`;
+                        });
+                    cvContact.innerHTML = [emailItem, ...socialItems].join('<span class="cv-contact-sep"> &nbsp;·&nbsp; </span>');
+                }
+            }
+
+            // Update books
+            if (data.books) {
+                updateBooks(data.books);
+            }
+
+            // Load notes list and align with tech stack
+            if (data.technologies) {
+                fetch('notes.json')
+                    .then(response => response.json())
+                    .then(notes => {
+                        updateTechnologies(data.technologies, notes);
+                    })
+                    .catch(error => {
+                        console.error('Error loading notes:', error);
+                    });
+            }
+        })
+        .catch(error => {
+            console.error('Error loading content:', error);
+            const aboutContent = document.getElementById('about-content');
+            if (aboutContent) {
+                aboutContent.textContent = 'Failed to load content. Please try again later.';
+            }
+        });
+
+    // Pre-fetch projects for CV print
+    let cachedProjects = [];
+    fetch('projects.json')
+        .then(r => r.json())
+        .then(data => { cachedProjects = data; })
+        .catch(() => {});
+
+    function buildCVProjectsHTML(projects) {
+        if (!projects.length) return '';
+        return `
+            <h2 class="h4">Side Projects</h2>
+            ${projects.map(p => `
+                <div class="cv-project-item">
+                    <div>• <strong>${p.title}</strong></div>
+                    ${p.git_url ? `<div class="cv-project-url"><a href="${p.git_url}">${p.git_url.replace(/^https?:\/\//, '')}</a></div>` : ''}
+                    ${p.excerpt ? `<div class="cv-project-excerpt">${p.excerpt}</div>` : ''}
+                </div>
+            `).join('')}
+        `;
+    }
+
+    let cvProjectsEl = null;
+
+    function injectCVProjects() {
+        if (cvProjectsEl || !cachedProjects.length) return;
+        cvProjectsEl = document.createElement('div');
+        cvProjectsEl.id = 'cv-projects-print';
+        cvProjectsEl.className = 'cv-projects';
+        cvProjectsEl.innerHTML = buildCVProjectsHTML(cachedProjects);
+        const footer = document.querySelector('.cv-print-footer');
+        if (footer) {
+            footer.parentNode.insertBefore(cvProjectsEl, footer);
+        } else {
+            document.querySelector('main').appendChild(cvProjectsEl);
+        }
+    }
+
+    function removeCVProjects() {
+        if (cvProjectsEl) {
+            cvProjectsEl.remove();
+            cvProjectsEl = null;
+        }
+    }
+
+    window.addEventListener('beforeprint', injectCVProjects);
+    window.addEventListener('afterprint', removeCVProjects);
+
+    // Dark mode toggle functionality
+    const themeToggleButtons = document.querySelectorAll('[data-theme-toggle]');
+    const themeIcons = document.querySelectorAll('.theme-icon');
+    const syntaxLight = document.getElementById('syntax-light');
+    const syntaxDark = document.getElementById('syntax-dark');
+
+    const applyTheme = (theme, persist = true) => {
+        if (theme === 'dark') {
+            document.documentElement.setAttribute('data-theme', 'dark');
+            themeIcons.forEach((icon) => {
+                icon.classList.remove('fa-moon');
+                icon.classList.add('fa-sun');
+            });
+            if (syntaxLight) syntaxLight.disabled = true;
+            if (syntaxDark) syntaxDark.disabled = false;
+        } else {
+            document.documentElement.setAttribute('data-theme', 'light');
+            themeIcons.forEach((icon) => {
+                icon.classList.remove('fa-sun');
+                icon.classList.add('fa-moon');
+            });
+            if (syntaxLight) syntaxLight.disabled = false;
+            if (syntaxDark) syntaxDark.disabled = true;
+        }
+
+        if (persist) {
+            localStorage.setItem('theme', theme);
+        }
+    };
+
+    // Check for saved theme preference or default to light mode
+    const currentTheme = localStorage.getItem('theme') || 'light';
+    applyTheme(currentTheme, false);
+
+    // Toggle theme on button click
+    themeToggleButtons.forEach((button) => {
+        button.addEventListener('click', () => {
+            const theme = document.documentElement.getAttribute('data-theme');
+            applyTheme(theme === 'dark' ? 'light' : 'dark');
+        });
+    });
+
+    // Dynamic dog animation stopping point
+    function updateDogStoppingPoint() {
+        const navbar = document.querySelector('.navbar');
+        const burgerButton = document.querySelector('.navbar-toggler');
+
+        if (navbar) {
+            // Check if burger button is visible (mobile mode)
+            if (burgerButton && burgerButton.offsetParent !== null) {
+                const burgerRect = burgerButton.getBoundingClientRect();
+                const stopDistance = window.innerWidth - burgerRect.left + 20; // 20px buffer
+                navbar.style.setProperty('--dog-stop-distance', `${stopDistance}px`);
+            } else {
+                // Desktop mode - full width
+                navbar.style.setProperty('--dog-stop-distance', '40px');
+            }
+        }
+    }
+
+    // Update on load and resize
+    updateDogStoppingPoint();
+    window.addEventListener('resize', updateDogStoppingPoint);
+
+    buildTableOfContents();
+    setupTocToggles();
+});

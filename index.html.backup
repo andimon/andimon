@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Andre' Vella</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@v2.15.1/devicon.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>Hi, I'm Andre' Vella</h1>
+    </header>
+    
+    <main>
+        <section id="about">
+            <h2>About Me</h2>
+            <div id="about-content">Loading...</div>
+        </section>
+
+        <section id="technologies">
+            <h2>Technologies I am currently using</h2>
+            <div id="technologies-list" class="technologies">Loading technologies...</div>
+        </section>
+
+        <section id="socials">
+            <h2>Connect With Me</h2>
+            <div id="social-links" class="social-links">Loading social links...</div>
+        </section>
+    </main>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
