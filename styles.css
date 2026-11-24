@@ -7,18 +7,20 @@ ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
-    width: 130px;
+    width: 8rem;
     background-color: #f1f1f1;
     position: fixed;
     height: 100%;
-    overflow: auto;
+    overflow: hidden;
+    transition: width 0.3s ease;
 }
 
 li a {
     display: block;
     color: black;
-    padding: 10px 16px;
+    padding: 0.625rem 1rem;
     text-decoration: none;
+    white-space: nowrap;
 }
 
 li a.active {
