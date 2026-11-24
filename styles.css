@@ -31,7 +31,8 @@ li a:hover:not(.active) {
     color: white;
 }
 
-i.collapse {
+button.collapse {
+    border: none;
     position: absolute;
     bottom: 0;
     right: 0;
