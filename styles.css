@@ -59,3 +59,11 @@ ul.collapse {
 ul.collapsed li a {
     font-size: 0;
 }
+
+ul.collapse li a.active {
+    font-size: 0;
+}
+
+.content.expanded {
+    margin-left: 3rem;
+}
