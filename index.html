@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,17 +7,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>AV</title>
     <link rel="stylesheet" href="./styles.css">
-    <script src="./script.js" href="./script.js"></script>
+    <script src="./script.js" defer></script>
 </head>
 
-
-
-
-
 <body>
+
     <ul id="sidebar">
-        <li> <a class="active" href="#home">Home</a></li>
-        <li> <a href="#contact">Contact</a></li>
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#contact">Contact</a></li>
+
         <li>
             <button class="collapse" onclick="toggleSidebar()">
                 &larr;
@@ -24,9 +23,9 @@
         </li>
     </ul>
 
-    <div style="margin-left:130px;padding:1px 16px;height:1000px;">
+    <div class="content" id="content">
         <h1>Hi, I am Andre Vella</h1>
     </div>
-</body>
 
+</body>
 </html>

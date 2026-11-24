@@ -43,16 +43,14 @@ button.collapse {
     background: transparent;
 }
 
-
 .content {
     margin-left: 8rem;
     padding: 1rem;
     transition: margin-left 0.3s ease;
 }
 
-
-/* collapsed sidebar */
-ul.collapse {
+/* Collapsed sidebar */
+ul.collapsed {
     width: 3rem;
 }
 
@@ -60,7 +58,7 @@ ul.collapsed li a {
     font-size: 0;
 }
 
-ul.collapse li a.active {
+ul.collapsed li a.active {
     font-size: 0;
 }
 
