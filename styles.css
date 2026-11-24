@@ -33,7 +33,7 @@ li a:hover:not(.active) {
 
 i.collapse {
     background-color: red;
-    position: relative;
+    position: absolute;
     bottom: 0;
     right: 0;
 }
