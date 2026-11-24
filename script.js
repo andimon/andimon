@@ -1,4 +1,10 @@
+function toggleSidebar(){
+    const sidebar = document.getElementById("sidebar");
+    const content = dpcument.getElementbyId("content");
+    const button = document.querySelector(".collapse")
 
-function toggleArrow(button) {
-    button.innerHTML = button.innerHTML.trim() === '→' ? '←' : '→';
+
+    sidebar.classList.toggle("collapsed");
+    content.classList.toggle("expanded");
+
 }
