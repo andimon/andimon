@@ -12,4 +12,8 @@ function toggleSidebar() {
         ? "&rarr;"
         : "&larr;";
 
+    button.title = sidebar.classList.contains("collapsed")
+        ? "expand sidebar"
+        : "collapse sidebar";
+
 }
