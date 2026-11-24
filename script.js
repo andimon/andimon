@@ -1,6 +1,6 @@
 function toggleSidebar() {
     const sidebar = document.getElementById("sidebar");
-    const content = dpcument.getElementbyId("content");
+    const content = document.getElementById("content");
     const button = document.querySelector(".collapse")
 
 
