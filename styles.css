@@ -40,4 +40,5 @@ button.collapse {
     right: 0;
     font-size: 2rem;
     cursor: pointer;
+    background: transparent;
 }
