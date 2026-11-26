@@ -67,3 +67,15 @@ ul.collapsed li a.active {
 .content.expanded {
     margin-left: 3rem;
 }
+
+/* Tech stack tables */
+.content table {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+}
+
+.content td {
+    padding: 0.5rem;
+    vertical-align: top;
+}
