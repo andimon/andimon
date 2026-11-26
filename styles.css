@@ -23,12 +23,7 @@ li a {
     white-space: nowrap;
 }
 
-li a.active {
-    background-color: #555;
-    color: white;
-}
-
-li a:hover:not(.active) {
+li a:hover {
     background-color: #555;
     color: white;
 }
@@ -55,11 +50,6 @@ ul.collapsed {
 }
 
 ul.collapsed li a {
-    font-size: 0;
-    background-color: transparent;
-}
-
-ul.collapsed li a.active {
     font-size: 0;
     background-color: transparent;
 }
